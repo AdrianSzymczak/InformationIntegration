@@ -1,0 +1,2 @@
+# InformationIntegration
+project for studies
