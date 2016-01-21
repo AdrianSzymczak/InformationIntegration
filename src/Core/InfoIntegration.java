@@ -20,18 +20,34 @@ public class InfoIntegration {
     public static void main(String[] args) throws Exception {
         FileHandler fl = new FileHandler();
 
-        List<List<String>> imf = fl.loadStringToTable(fl.loadDocument("C:\\Users\\Adrian\\Desktop\\info-integration\\IMF-data.tsv"), "\n", "\t");
-        List<List<String>> wefd = fl.loadStringToTable(fl.loadDocument("C:\\Users\\Adrian\\Desktop\\info-integration\\WEF-data.tsv"), "\n", "\t");
-        List<List<String>> wefe = fl.loadStringToTable(fl.loadDocument("C:\\Users\\Adrian\\Desktop\\info-integration\\WEF-entities.tsv"), "\n", "\t");
-        List<List<String>> wefm = fl.loadStringToTable(fl.loadDocument("C:\\Users\\Adrian\\Desktop\\info-integration\\WEF-metadata.tsv"), "\n", "\t");
-        List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("C:\\Users\\Adrian\\Desktop\\info-integration\\WD-metadata.tsv"), "\n", "\t");
-        List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("C:\\Users\\Adrian\\Desktop\\info-integration\\WD-data.csv"), "\n", ";");
+        List<List<String>> imf = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/IMF-data.tsv"), "\n", "\t");
+        List<List<String>> wefd = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/WEF-data.tsv"), "\n", "\t");
+        List<List<String>> wefe = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/WEF-entities.tsv"), "\n", "\t");
+        List<List<String>> wefm = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/WEF-metadata.tsv"), "\n", "\t");
+        List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/WD-metadata.tsv"), "\n", "\t");
+        List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/WD-data.csv"), "\n", ";");
 
-        fl.saveTableToDocument(imf, "\n\r", "\t", "C:\\Users\\Adrian\\Desktop\\info-integration\\new\\imf.tsv");
-        fl.saveTableToDocument(wefd, "\n\r", "\t", "C:\\Users\\Adrian\\Desktop\\info-integration\\new\\wefd.tsv");
-        fl.saveTableToDocument(wefe, "\n\r", "\t", "C:\\Users\\Adrian\\Desktop\\info-integration\\new\\wefe.tsv");
-        fl.saveTableToDocument(wefm, "\n\r", "\t", "C:\\Users\\Adrian\\Desktop\\info-integration\\new\\wefm.tsv");
-        fl.saveTableToDocument(wdm, "\n\r", "\t", "C:\\Users\\Adrian\\Desktop\\info-integration\\new\\wdm.tsv");
-        fl.saveTableToDocument(wdd, "\n\r", "\t", "C:\\Users\\Adrian\\Desktop\\info-integration\\new\\wdd.tsv");
+        countryExtractor ce = new countryExtractor();
+        List<List<String>> contriesTable = ce.getCountries(imf, wefe, wdd);
+        imf= ce.getSourceWithCountryId(imf,contriesTable);
+        wefe= ce.getSourceWithCountryId(wefe,contriesTable);
+        wdd= ce.getSourceWithCountryId(wdd,contriesTable);
+        
+        indicatorExtractor ie = new indicatorExtractor();
+        List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
+        imf= ie.getIMFWithIndicatorId(imf,indicatorsTable);
+        wefm= ie.getWEFMWithIndicatorId(wefe,indicatorsTable);
+        wdm= ie.getWDMWithIndicatorId(wdd,indicatorsTable);
+        
+        
+      
+       
+        
+        fl.saveTableToDocument(imf, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/imf.tsv");
+        fl.saveTableToDocument(wefd, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wefd.tsv");
+        fl.saveTableToDocument(wefe, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wefe.tsv");
+        fl.saveTableToDocument(wefm, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wefm.tsv");
+        fl.saveTableToDocument(wdm, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wdm.tsv");
+        fl.saveTableToDocument(wdd, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wdd.tsv");
     }
 }
