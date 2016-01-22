@@ -28,10 +28,10 @@ public class InfoIntegration {
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/WD-data.csv"), "\n", ";");
 
         countryExtractor ce = new countryExtractor();
-        List<List<String>> contriesTable = ce.getCountries(imf, wefe, wdd);
-        imf= ce.getSourceWithCountryId(imf,contriesTable);
-        wefe= ce.getSourceWithCountryId(wefe,contriesTable);
-        wdd= ce.getSourceWithCountryId(wdd,contriesTable);
+        List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
+        imf= ce.getSourceWithCountryId(imf,countriesTable);
+        wefe= ce.getSourceWithCountryId(wefe,countriesTable);
+        wdd= ce.getSourceWithCountryId(wdd,countriesTable);
         
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
@@ -39,8 +39,9 @@ public class InfoIntegration {
         wefm= ie.getWEFMWithIndicatorId(wefe,indicatorsTable);
         wdm= ie.getWDMWithIndicatorId(wdd,indicatorsTable);
         
+        //valueExtractor ve = new valueExtractor();
+        //List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
         
-      
        
         
         fl.saveTableToDocument(imf, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/imf.tsv");
@@ -49,5 +50,8 @@ public class InfoIntegration {
         fl.saveTableToDocument(wefm, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wefm.tsv");
         fl.saveTableToDocument(wdm, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wdm.tsv");
         fl.saveTableToDocument(wdd, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wdd.tsv");
+        fl.saveTableToDocument(countriesTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/country.tsv");
+        fl.saveTableToDocument(indicatorsTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/indicator.tsv");
+        //fl.saveTableToDocument(valuesTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/value.tsv");
     }
 }

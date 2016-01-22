@@ -135,7 +135,7 @@ public class indicatorExtractor {
    for(int i = 1; i < source.size(); i++) {
        List<String> rowSource= source.get(i);    
        String indicatorId= this.getIndicatorIDIFM(indicators,rowSource);
-       rowSource.add(8,indicatorId);
+       rowSource.set(3,indicatorId);
        result.add(rowSource);
     }
           
