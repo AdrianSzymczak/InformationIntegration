@@ -17,20 +17,20 @@ import java.util.Set;
  * @author facu
  */
 public class valueExtractor {
-     
+
     public List<List<String>> getValues(List<List<String>> imf, List<List<String>> wefd,
-           List<List<String>> wefe, List<List<String>> wefm, List<List<String>> wdd,
-           List<List<String>>wdm) throws Exception { 
-    
-        List<List<String>> result = new ArrayList<List<String>>(); 
-        
+            List<List<String>> wefe, List<List<String>> wefm, List<List<String>> wdd,
+            List<List<String>> wdm) throws Exception {
+
+        List<List<String>> result = new ArrayList<List<String>>();
+
         //IMF
-        for(int i = 1; i < imf.size(); i++) {
-            List<String> rowReaded= imf.get(i);
-            List<String> rowResult= new ArrayList<String>();
-            
-            String fk_country =rowReaded.get(0);
-            String fk_indicator =rowReaded.get(8);
+        for (int i = 1; i < imf.size(); i++) {
+            List<String> rowReaded = imf.get(i);
+            List<String> rowResult = new ArrayList<String>();
+
+            String fk_country = rowReaded.get(0);
+            String fk_indicator = rowReaded.get(8);
             String year1980 = rowReaded.get(9);
             String year1981 = rowReaded.get(10);
             String year1982 = rowReaded.get(11);
@@ -73,57 +73,56 @@ public class valueExtractor {
             String year2019 = rowReaded.get(48);
             String year2020 = rowReaded.get(49);
             String estimates = rowReaded.get(50);
-            
-            rowResult.add( fk_country);
-            rowResult.add( fk_indicator);
-            rowResult.add( year1980);
-            rowResult.add( year1981);
-            rowResult.add( year1982);
-            rowResult.add( year1983);
-            rowResult.add( year1984);
-            rowResult.add( year1985);
-            rowResult.add( year1986);
-            rowResult.add( year1987);
-            rowResult.add( year1988);
-            rowResult.add( year1989);
-            rowResult.add( year1990);
-            rowResult.add( year1991);
-            rowResult.add( year1992);
-            rowResult.add( year1993);
-            rowResult.add( year1994);
-            rowResult.add( year1995);
-            rowResult.add( year1996);
-            rowResult.add( year1997);
-            rowResult.add( year1998);
-            rowResult.add( year1999);
-            rowResult.add( year2000);
-            rowResult.add( year2001);
-            rowResult.add( year2002);
-            rowResult.add( year2003);
-            rowResult.add( year2004);
-            rowResult.add( year2005);
-            rowResult.add( year2006);
-            rowResult.add( year2007);
-            rowResult.add( year2008);
-            rowResult.add( year2009);
-            rowResult.add( year2010);
-            rowResult.add( year2011);
-            rowResult.add( year2012);
-            rowResult.add( year2013);
-            rowResult.add( year2014);
-            rowResult.add( year2015);
-            rowResult.add( year2016);
-            rowResult.add( year2017);
-            rowResult.add( year2018);
-            rowResult.add( year2019);
-            rowResult.add( year2020);
-            rowResult.add( estimates);
 
-            
+            rowResult.add(fk_country);
+            rowResult.add(fk_indicator);
+            rowResult.add(year1980);
+            rowResult.add(year1981);
+            rowResult.add(year1982);
+            rowResult.add(year1983);
+            rowResult.add(year1984);
+            rowResult.add(year1985);
+            rowResult.add(year1986);
+            rowResult.add(year1987);
+            rowResult.add(year1988);
+            rowResult.add(year1989);
+            rowResult.add(year1990);
+            rowResult.add(year1991);
+            rowResult.add(year1992);
+            rowResult.add(year1993);
+            rowResult.add(year1994);
+            rowResult.add(year1995);
+            rowResult.add(year1996);
+            rowResult.add(year1997);
+            rowResult.add(year1998);
+            rowResult.add(year1999);
+            rowResult.add(year2000);
+            rowResult.add(year2001);
+            rowResult.add(year2002);
+            rowResult.add(year2003);
+            rowResult.add(year2004);
+            rowResult.add(year2005);
+            rowResult.add(year2006);
+            rowResult.add(year2007);
+            rowResult.add(year2008);
+            rowResult.add(year2009);
+            rowResult.add(year2010);
+            rowResult.add(year2011);
+            rowResult.add(year2012);
+            rowResult.add(year2013);
+            rowResult.add(year2014);
+            rowResult.add(year2015);
+            rowResult.add(year2016);
+            rowResult.add(year2017);
+            rowResult.add(year2018);
+            rowResult.add(year2019);
+            rowResult.add(year2020);
+            rowResult.add(estimates);
+
             result.add(rowResult);
-            
+
         }
- 
+
 //        
 //        //WD
 //        for(int i = 1; i < wdd.size(); i++) {
@@ -225,13 +224,11 @@ public class valueExtractor {
 //            result.add(rowResult);
 //            
 //        }        
-        
-     //Adding ID   
-        
-        for(int i = 0; i < result.size(); i++) {
-            String id=Integer.toString(i+1);
+        //Adding ID   
+        for (int i = 0; i < result.size(); i++) {
+            String id = Integer.toString(i + 1);
             result.get(i).add(0, id);
-            
+
 //            List<String> rowReaded= result.get(i);
 //            System.out.println(rowReaded.get(0));
 //            System.out.println(rowReaded.get(1));
@@ -239,25 +236,22 @@ public class valueExtractor {
 //            System.out.println(rowReaded.get(3));
 //            System.out.println(rowReaded.get(4));
         }
-        
-        
-     return result;
-    
+
+        return result;
+
     }
-    
-    
-    
-    public String getIndicatorFKWD( String code, List<List<String>> wdm){
-        String result= "-2";//new String();
-        
-        for(int i = 0; i < wdm.size(); i++) {
-            List<String> rowIndicator= wdm.get(i); 
-            if(rowIndicator.get(1).equals(code)){
-               result =rowIndicator.get(0); 
+
+    public String getIndicatorFKWD(String code, List<List<String>> wdm) {
+        String result = "-2";//new String();
+
+        for (int i = 0; i < wdm.size(); i++) {
+            List<String> rowIndicator = wdm.get(i);
+            if (rowIndicator.get(1).equals(code)) {
+                result = rowIndicator.get(0);
             }
         }
-        
+
         return result;
-        
+
     }
 }

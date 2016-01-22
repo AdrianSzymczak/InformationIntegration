@@ -16,23 +16,23 @@ import java.util.Set;
  */
 public class indicatorExtractor {
 
-    public List<List<String>> getIndicators(List<List<String>> imf, 
-            List<List<String>> wefm, List<List<String>> wddm) throws Exception {    
-        
-        List<List<String>> result = new ArrayList<List<String>>();   
-        
+    public List<List<String>> getIndicators(List<List<String>> imf,
+            List<List<String>> wefm, List<List<String>> wddm) throws Exception {
+
+        List<List<String>> result = new ArrayList<List<String>>();
+
         //IMF
-        for(int i = 1; i < imf.size(); i++) {
-            List<String> rowReaded= imf.get(i);
-            List<String> rowResult= new ArrayList<String>();
-            
-            String code =null;
-            String notes =rowReaded.get(3);
-            String descriptor =rowReaded.get(2);
-            String units =rowReaded.get(4);
-            String scale =rowReaded.get(5);
+        for (int i = 1; i < imf.size(); i++) {
+            List<String> rowReaded = imf.get(i);
+            List<String> rowResult = new ArrayList<String>();
+
+            String code = null;
+            String notes = rowReaded.get(3);
+            String descriptor = rowReaded.get(2);
+            String units = rowReaded.get(4);
+            String scale = rowReaded.get(5);
             String source = null;
-            String countryNotes =rowReaded.get(6); 
+            String countryNotes = rowReaded.get(6);
 
             rowResult.add(code);
             rowResult.add(notes);
@@ -41,24 +41,23 @@ public class indicatorExtractor {
             rowResult.add(scale);
             rowResult.add(source);
             rowResult.add(countryNotes);
-            
-            
+
             result.add(rowResult);
-            
+
         }
-        
+
         //WEFM
-        for(int i = 1; i < wefm.size(); i++) {
-            List<String> rowReaded= wefm.get(i);
-            List<String> rowResult= new ArrayList<String>();
-            
-            String code =rowReaded.get(0);
-            String notes =rowReaded.get(5);
-            String descriptor =rowReaded.get(1);
+        for (int i = 1; i < wefm.size(); i++) {
+            List<String> rowReaded = wefm.get(i);
+            List<String> rowResult = new ArrayList<String>();
+
+            String code = rowReaded.get(0);
+            String notes = rowReaded.get(5);
+            String descriptor = rowReaded.get(1);
             String units = rowReaded.get(2);
             String scale = rowReaded.get(6);
             String source = rowReaded.get(4);
-            String countryNotes =null; 
+            String countryNotes = null;
 
             rowResult.add(code);
             rowResult.add(notes);
@@ -68,23 +67,22 @@ public class indicatorExtractor {
             rowResult.add(source);
             rowResult.add(countryNotes);
 
-            
             result.add(rowResult);
-            
+
         }
 
         //WDDM
-        for(int i = 1; i < wddm.size(); i++) {
-            List<String> rowReaded= wddm.get(i);
-            List<String> rowResult= new ArrayList<String>();
-            
-            String code =rowReaded.get(0);
-            String notes =rowReaded.get(2);
-            String descriptor =rowReaded.get(1);
-            String units =null;
-            String scale =null;
+        for (int i = 1; i < wddm.size(); i++) {
+            List<String> rowReaded = wddm.get(i);
+            List<String> rowResult = new ArrayList<String>();
+
+            String code = rowReaded.get(0);
+            String notes = rowReaded.get(2);
+            String descriptor = rowReaded.get(1);
+            String units = null;
+            String scale = null;
             String source = rowReaded.get(3);
-            String countryNotes =null; 
+            String countryNotes = null;
 
             rowResult.add(code);
             rowResult.add(notes);
@@ -95,20 +93,18 @@ public class indicatorExtractor {
             rowResult.add(countryNotes);
 
             result.add(rowResult);
-            
-        }                      
-        
-        
+
+        }
+
         //Removing Duplicates
         Set<List<String>> hs = new HashSet<>();
         hs.addAll(result);
         result.clear();
         result.addAll(hs);
 
-     //Adding ID   
-        
-        for(int i = 0; i < result.size(); i++) {
-            String id=Integer.toString(i+1);
+        //Adding ID   
+        for (int i = 0; i < result.size(); i++) {
+            String id = Integer.toString(i + 1);
             result.get(i).add(0, id);
 //            
 //            List<String> rowReaded= result.get(i);
@@ -118,113 +114,96 @@ public class indicatorExtractor {
 //            System.out.println(rowReaded.get(3));
 //            System.out.println(rowReaded.get(4));
         }
-        
-        
-        return result;
-        
-    }
-    
- 
- 
-  public List<List<String>> getIMFWithIndicatorId(List<List<String>> source,
-         List<List<String>> indicators) throws Exception {       
-     
-   List<List<String>> result = new ArrayList<List<String>>();   
-     
-   
-   for(int i = 1; i < source.size(); i++) {
-       List<String> rowSource= source.get(i);    
-       String indicatorId= this.getIndicatorIDIFM(indicators,rowSource);
-       rowSource.set(3,indicatorId);
-       result.add(rowSource);
-    }
-          
-     
-     return result;
- }
-  
-  
-  public List<List<String>> getWDMWithIndicatorId(List<List<String>> source,
-         List<List<String>> indicators) throws Exception {       
-     
-   List<List<String>> result = new ArrayList<List<String>>();   
-     
-   
-   for(int i = 1; i < source.size(); i++) {
-       List<String> rowSource= source.get(i);    
-       String indicatorId= this.getIndicatorIDWDM(indicators,rowSource);
-       rowSource.add(0,indicatorId);
-       result.add(rowSource);
-    }
-          
-     
-     return result;
- }
 
-  public List<List<String>> getWEFMWithIndicatorId(List<List<String>> source,
-         List<List<String>> indicators) throws Exception {       
-     
-   List<List<String>> result = new ArrayList<List<String>>();   
-     
-   
-   for(int i = 1; i < source.size(); i++) {
-       List<String> rowSource= source.get(i);    
-       String indicatorId= this.getIndicatorIDWEFM(indicators,rowSource);
-       rowSource.add(0,indicatorId);
-       result.add(rowSource);
+        return result;
+
     }
-          
-     
-     return result;
- }  
- 
- public String getIndicatorIDIFM(List<List<String>> indicators,
-         List<String> source) throws Exception { 
-     String id="-1";
-     
-     for(int i = 0; i < indicators.size(); i++) {
-        List<String> rowIndicator= indicators.get(i); 
-        
-        
-        
-           if(rowIndicator.get(3).equals(source.get(2))){
-               id =rowIndicator.get(0); 
+
+    public List<List<String>> getIMFWithIndicatorId(List<List<String>> source,
+            List<List<String>> indicators) throws Exception {
+
+        List<List<String>> result = new ArrayList<List<String>>();
+
+        for (int i = 1; i < source.size(); i++) {
+            List<String> rowSource = source.get(i);
+            String indicatorId = this.getIndicatorIDIFM(indicators, rowSource);
+            rowSource.set(3, indicatorId);
+            result.add(rowSource);
+        }
+
+        return result;
+    }
+
+    public List<List<String>> getWDMWithIndicatorId(List<List<String>> source,
+            List<List<String>> indicators) throws Exception {
+
+        List<List<String>> result = new ArrayList<List<String>>();
+
+        for (int i = 1; i < source.size(); i++) {
+            List<String> rowSource = source.get(i);
+            String indicatorId = this.getIndicatorIDWDM(indicators, rowSource);
+            rowSource.add(0, indicatorId);
+            result.add(rowSource);
+        }
+
+        return result;
+    }
+
+    public List<List<String>> getWEFMWithIndicatorId(List<List<String>> source,
+            List<List<String>> indicators) throws Exception {
+
+        List<List<String>> result = new ArrayList<List<String>>();
+
+        for (int i = 1; i < source.size(); i++) {
+            List<String> rowSource = source.get(i);
+            String indicatorId = this.getIndicatorIDWEFM(indicators, rowSource);
+            rowSource.add(0, indicatorId);
+            result.add(rowSource);
+        }
+
+        return result;
+    }
+
+    public String getIndicatorIDIFM(List<List<String>> indicators,
+            List<String> source) throws Exception {
+        String id = "-1";
+
+        for (int i = 0; i < indicators.size(); i++) {
+            List<String> rowIndicator = indicators.get(i);
+
+            if (rowIndicator.get(3).equals(source.get(2))) {
+                id = rowIndicator.get(0);
             }
-     }
-     return id;
- }
- 
- 
- public String getIndicatorIDWDM(List<List<String>> indicators,
-         List<String> source) throws Exception { 
-     String id="-1";
-     
-     for(int i = 0; i < indicators.size(); i++) {
-        List<String> rowIndicator= indicators.get(i); 
-        
-        
-        
-           if(rowIndicator.get(3).equals(source.get(1))){
-               id =rowIndicator.get(0); 
+        }
+        return id;
+    }
+
+    public String getIndicatorIDWDM(List<List<String>> indicators,
+            List<String> source) throws Exception {
+        String id = "-1";
+
+        for (int i = 0; i < indicators.size(); i++) {
+            List<String> rowIndicator = indicators.get(i);
+
+            if (rowIndicator.get(3).equals(source.get(1))) {
+                id = rowIndicator.get(0);
             }
-     }
-     return id;
- }
- 
- public String getIndicatorIDWEFM(List<List<String>> indicators,
-         List<String> source) throws Exception { 
-     String id="-1";
-     
-     for(int i = 0; i < indicators.size(); i++) {
-        List<String> rowIndicator= indicators.get(i); 
-        
-        
-        
-           if(rowIndicator.get(3).equals(source.get(1))){
-               id =rowIndicator.get(0); 
+        }
+        return id;
+    }
+
+    public String getIndicatorIDWEFM(List<List<String>> indicators,
+            List<String> source) throws Exception {
+        String id = "-1";
+
+        for (int i = 0; i < indicators.size(); i++) {
+            List<String> rowIndicator = indicators.get(i);
+
+            if (rowIndicator.get(3).equals(source.get(1))) {
+                id = rowIndicator.get(0);
             }
-     }
-     return id;
- }
- 
- }
+        }
+        return id;
+    }
+
+}
