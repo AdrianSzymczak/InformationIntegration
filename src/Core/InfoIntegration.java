@@ -39,8 +39,8 @@ public class InfoIntegration {
         wefm= ie.getWEFMWithIndicatorId(wefe,indicatorsTable);
         wdm= ie.getWDMWithIndicatorId(wdd,indicatorsTable);
         
-        //valueExtractor ve = new valueExtractor();
-        //List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
+        valueExtractor ve = new valueExtractor();
+        List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
         
        
         
