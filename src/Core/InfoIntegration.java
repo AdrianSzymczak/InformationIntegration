@@ -39,8 +39,8 @@ public class InfoIntegration {
         wefm= ie.getWEFMWithIndicatorId(wefe,indicatorsTable);
         wdm= ie.getWDMWithIndicatorId(wdd,indicatorsTable);
         
-        valueExtractor ve = new valueExtractor();
-        List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
+        //valueExtractor ve = new valueExtractor();
+        //List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
         
        
         
@@ -52,6 +52,6 @@ public class InfoIntegration {
         fl.saveTableToDocument(wdd, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/wdd.tsv");
         fl.saveTableToDocument(countriesTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/country.tsv");
         fl.saveTableToDocument(indicatorsTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/indicator.tsv");
-        fl.saveTableToDocument(valuesTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/value.tsv");
+        //fl.saveTableToDocument(valuesTable, "\n\r", "\t", "/home/facu/NetBeansProjects/InformationIntegration/InformationIntegration/data/new/value.tsv");
     }
 }
