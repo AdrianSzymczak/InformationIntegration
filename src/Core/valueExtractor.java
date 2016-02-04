@@ -25,7 +25,7 @@ public class valueExtractor {
         List<List<String>> result = new ArrayList<List<String>>(); 
         
         //IMF
-        for(int i = 1; i < imf.size(); i++) {
+        for(int i = 0; i < imf.size(); i++) {
             List<String> rowReaded= imf.get(i);
             List<String> rowResult= new ArrayList<String>();
             

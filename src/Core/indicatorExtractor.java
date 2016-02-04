@@ -27,12 +27,12 @@ public class indicatorExtractor {
             List<String> rowResult = new ArrayList<String>();
 
             String code = null;
-            String notes = rowReaded.get(3);
-            String descriptor = rowReaded.get(2);
-            String units = rowReaded.get(4);
-            String scale = rowReaded.get(5);
+            String notes = rowReaded.get(4);
+            String descriptor = rowReaded.get(3);
+            String units = rowReaded.get(5);
+            String scale = rowReaded.get(6);
             String source = null;
-            String countryNotes = rowReaded.get(6);
+            String countryNotes = rowReaded.get(7);
 
             rowResult.add(code);
             rowResult.add(notes);
@@ -71,7 +71,7 @@ public class indicatorExtractor {
 
         }
 
-        //WDDM
+        //WDD
         for (int i = 1; i < wddm.size(); i++) {
             List<String> rowReaded = wddm.get(i);
             List<String> rowResult = new ArrayList<String>();
@@ -126,7 +126,7 @@ public class indicatorExtractor {
 
         for (int i = 1; i < source.size(); i++) {
             List<String> rowSource = source.get(i);
-            String indicatorId = this.getIndicatorIDIFM(indicators, rowSource);
+            String indicatorId = this.getIndicatorIDIMF(indicators, rowSource);
             rowSource.set(3, indicatorId);
             result.add(rowSource);
         }
@@ -134,14 +134,14 @@ public class indicatorExtractor {
         return result;
     }
 
-    public List<List<String>> getWDMWithIndicatorId(List<List<String>> source,
+    public List<List<String>> getWDDWithIndicatorId(List<List<String>> source,
             List<List<String>> indicators) throws Exception {
 
         List<List<String>> result = new ArrayList<List<String>>();
 
         for (int i = 1; i < source.size(); i++) {
             List<String> rowSource = source.get(i);
-            String indicatorId = this.getIndicatorIDWDM(indicators, rowSource);
+            String indicatorId = this.getIndicatorIDWDD(indicators, rowSource);
             rowSource.add(0, indicatorId);
             result.add(rowSource);
         }
@@ -164,28 +164,29 @@ public class indicatorExtractor {
         return result;
     }
 
-    public String getIndicatorIDIFM(List<List<String>> indicators,
+    public String getIndicatorIDIMF(List<List<String>> indicators,
             List<String> source) throws Exception {
         String id = "-1";
 
         for (int i = 0; i < indicators.size(); i++) {
             List<String> rowIndicator = indicators.get(i);
 
-            if (rowIndicator.get(3).equals(source.get(2))) {
+            if ((rowIndicator.get(2)!=null)&&rowIndicator.get(2).equals(source.get(4))) {
+                //System.out.println(rowIndicator.get(2));
                 id = rowIndicator.get(0);
             }
         }
         return id;
     }
 
-    public String getIndicatorIDWDM(List<List<String>> indicators,
+    public String getIndicatorIDWDD(List<List<String>> indicators,
             List<String> source) throws Exception {
         String id = "-1";
 
         for (int i = 0; i < indicators.size(); i++) {
             List<String> rowIndicator = indicators.get(i);
 
-            if (rowIndicator.get(3).equals(source.get(1))) {
+            if ((rowIndicator.get(1) != null)&&(rowIndicator.get(1).equals(source.get(3)))) {
                 id = rowIndicator.get(0);
             }
         }

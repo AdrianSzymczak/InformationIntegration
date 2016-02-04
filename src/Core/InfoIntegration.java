@@ -37,10 +37,10 @@ public class InfoIntegration {
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
         wefm = ie.getWEFMWithIndicatorId(wefe, indicatorsTable);
-        wdm = ie.getWDMWithIndicatorId(wdd, indicatorsTable);
+        wdd = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
 
-        //valueExtractor ve = new valueExtractor();
-        //List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
+        valueExtractor ve = new valueExtractor();
+        List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
         fl.saveTableToDocument(imf, "\n\r", "\t", "data/new/imf.tsv");
         fl.saveTableToDocument(wefd, "\n\r", "\t", "data/new/wefd.tsv");
         fl.saveTableToDocument(wefe, "\n\r", "\t", "data/new/wefe.tsv");
@@ -49,6 +49,6 @@ public class InfoIntegration {
         fl.saveTableToDocument(wdd, "\n\r", "\t", "data/new/wdd.tsv");
         fl.saveTableToDocument(countriesTable, "\n\r", "\t", "data/new/country.tsv");
         fl.saveTableToDocument(indicatorsTable, "\n\r", "\t", "data/new/indicator.tsv");
-        //fl.saveTableToDocument(valuesTable, "\n\r", "\t", "data/new/value.tsv");
+        fl.saveTableToDocument(valuesTable, "\n\r", "\t", "data/new/value.tsv");
     }
 }
