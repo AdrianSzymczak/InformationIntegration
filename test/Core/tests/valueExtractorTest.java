@@ -62,7 +62,7 @@ public class valueExtractorTest {
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         imf= ie.getIMFWithIndicatorId(imf,indicatorsTable);
         wefm= ie.getWEFMWithIndicatorId(wefe,indicatorsTable);
-        wdm= ie.getWDDWithIndicatorId(wdd,indicatorsTable);
+        wdd= ie.getWDDWithIndicatorId(wdd,indicatorsTable);
         
         valueExtractor ve = new valueExtractor();
         List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
@@ -93,7 +93,7 @@ public class valueExtractorTest {
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         imf= ie.getIMFWithIndicatorId(imf,indicatorsTable);
         wefm= ie.getWEFMWithIndicatorId(wefe,indicatorsTable);
-        wdm= ie.getWDDWithIndicatorId(wdd,indicatorsTable);
+        wdd= ie.getWDDWithIndicatorId(wdd,indicatorsTable);
         
         valueExtractor ve = new valueExtractor();
         List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
