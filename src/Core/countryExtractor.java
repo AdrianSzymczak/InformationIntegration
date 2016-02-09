@@ -123,5 +123,25 @@ public class countryExtractor {
         }
         return id;
     }
+    
+    public List<List<String>> getWEFDWithCountryId(List<List<String>> wefd,
+            List<List<String>> countries){
+        List<String> newFirstRow = wefd.get(0);
+        
+        String id;        
+        for(int i=2; i< newFirstRow.size();i++){
+           id ="-1";
+           for (int j = 0; j < countries.size(); j++) {
+            List<String> rowCountry = countries.get(j);
+
+                if (rowCountry.get(2).equals(newFirstRow.get(i))) {
+                    
+                    newFirstRow.set(i,rowCountry.get(0));
+                }
+           }    
+        }
+        wefd.set(0,newFirstRow);
+        return wefd;
+    }
 
 }

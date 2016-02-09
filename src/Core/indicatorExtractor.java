@@ -149,14 +149,14 @@ public class indicatorExtractor {
         return result;
     }
 
-    public List<List<String>> getWEFMWithIndicatorId(List<List<String>> source,
+    public List<List<String>> getWEFDWithIndicatorId(List<List<String>> source,
             List<List<String>> indicators) throws Exception {
 
         List<List<String>> result = new ArrayList<List<String>>();
 
-        for (int i = 1; i < source.size(); i++) {
+        for (int i = 0; i < source.size(); i++) {
             List<String> rowSource = source.get(i);
-            String indicatorId = this.getIndicatorIDWEFM(indicators, rowSource);
+            String indicatorId = this.getIndicatorIDWEFD(indicators, rowSource);
             rowSource.add(0, indicatorId);
             result.add(rowSource);
         }
@@ -193,14 +193,14 @@ public class indicatorExtractor {
         return id;
     }
 
-    public String getIndicatorIDWEFM(List<List<String>> indicators,
+    public String getIndicatorIDWEFD(List<List<String>> indicators,
             List<String> source) throws Exception {
         String id = "-1";
 
         for (int i = 0; i < indicators.size(); i++) {
             List<String> rowIndicator = indicators.get(i);
 
-            if (rowIndicator.get(3).equals(source.get(1))) {
+            if ((rowIndicator.get(1) != null)&&(rowIndicator.get(1).equals(source.get(1)))) {
                 id = rowIndicator.get(0);
             }
         }

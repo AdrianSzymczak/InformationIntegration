@@ -86,7 +86,7 @@ public class indicatorExtractorTest {
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
-        wefm = ie.getWEFMWithIndicatorId(wefe, indicatorsTable);
+        wefm = ie.getWEFDWithIndicatorId(wefe, indicatorsTable);
         wdm = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
 
         assertEquals(imf.get(0).get(4), "Annual percentages of constant price GDP are year-on-year changes; the base year is country-specific . Expenditure-based GDP is total final expenditures at purchasers? prices (including the f.o.b. value of exports of goods and services), less the f.o.b. value of imports of goods and services. [SNA 1993]");
@@ -114,7 +114,7 @@ public class indicatorExtractorTest {
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
-        wefm = ie.getWEFMWithIndicatorId(wefe, indicatorsTable);
+        wefm = ie.getWEFDWithIndicatorId(wefe, indicatorsTable);
         wdm = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
 
         int firstRowSize = indicatorsTable.get(0).size();
