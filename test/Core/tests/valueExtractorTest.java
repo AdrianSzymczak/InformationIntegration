@@ -54,16 +54,17 @@ public class valueExtractorTest {
 
         countryExtractor ce = new countryExtractor();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
-        imf= ce.getSourceWithCountryId(imf,countriesTable);
-        wefe= ce.getSourceWithCountryId(wefe,countriesTable);
-        wdd= ce.getSourceWithCountryId(wdd,countriesTable);
-        
+        imf = ce.getSourceWithCountryId(imf, countriesTable);
+        wefe = ce.getSourceWithCountryId(wefe, countriesTable);
+        wdd = ce.getSourceWithCountryId(wdd, countriesTable);
+        wefd = ce.getWEFDWithCountryId(wefd, countriesTable);
+
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
-        imf= ie.getIMFWithIndicatorId(imf,indicatorsTable);
-        wefm= ie.getWEFDWithIndicatorId(wefe,indicatorsTable);
-        wdd= ie.getWDDWithIndicatorId(wdd,indicatorsTable);
-        
+        imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
+        wefd = ie.getWEFDWithIndicatorId(wefd, indicatorsTable);
+        wdd = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
+
         valueExtractor ve = new valueExtractor();
         List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
 
@@ -85,16 +86,17 @@ public class valueExtractorTest {
 
         countryExtractor ce = new countryExtractor();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
-        imf= ce.getSourceWithCountryId(imf,countriesTable);
-        wefe= ce.getSourceWithCountryId(wefe,countriesTable);
-        wdd= ce.getSourceWithCountryId(wdd,countriesTable);
-        
+        imf = ce.getSourceWithCountryId(imf, countriesTable);
+        wefe = ce.getSourceWithCountryId(wefe, countriesTable);
+        wdd = ce.getSourceWithCountryId(wdd, countriesTable);
+        wefd = ce.getWEFDWithCountryId(wefd, countriesTable);
+
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
-        imf= ie.getIMFWithIndicatorId(imf,indicatorsTable);
-        wefm= ie.getWEFDWithIndicatorId(wefe,indicatorsTable);
-        wdd= ie.getWDDWithIndicatorId(wdd,indicatorsTable);
-        
+        imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
+        wefd = ie.getWEFDWithIndicatorId(wefd, indicatorsTable);
+        wdd = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
+
         valueExtractor ve = new valueExtractor();
         List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
 

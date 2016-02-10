@@ -227,60 +227,49 @@ public class valueExtractor {
             
         }        
 
-//     //WEF
-//     List<String> firstRow =wefd.get(0);
-//     for(int i=3; i< 154 /*firstRow.size()*/;i++){
-//        List<String> rowResult= new ArrayList<String>();
-//        
-//        rowResult.add(firstRow.get(i) ); //FkCountry
-//        
-//        
-//        for(int j = 0; j < wefd.size(); j++) {
-//            List<String> rowReaded= wefd.get(i);
-//            rowResult.add( rowReaded.get(0)); //FkIndicator
-//            
-//            
-//            for(int z=0;z<25;z++){
-//                rowResult.add( null); //Years without information 1980-2005
-//            }
-//            
-//            List<List<String>> valuesOfIndicator 
-//                    = this.getValuesOfIndicator(rowReaded.get(0),wefd);
-//            for(int z=0;z<wefd.size();z++){
-//                
-//                if()
-//            }
-//            
-//        rowResult.add( year1980);
-//        rowResult.add( year1981);
-//        rowResult.add( year1982);
-//        rowResult.add( year1983);
-//        rowResult.add( year1984);
-//        rowResult.add( year1985);
-//        rowResult.add( year1986);
-//        rowResult.add( year1987);
-//        rowResult.add( year1988);
-//        rowResult.add( year1989);
-//        rowResult.add( year1990);
-//        rowResult.add( year1991);
-//        rowResult.add( year1992);
-//        rowResult.add( year1993);
-//        rowResult.add( year1994);
-//        rowResult.add( year1995);
-//        rowResult.add( year1996);
-//        rowResult.add( year1997);
-//        rowResult.add( year1998);
-//        rowResult.add( year1999);
-//        rowResult.add( year2000);
-//        rowResult.add( year2001);
-//        rowResult.add( year2002);
-//        rowResult.add( year2003);
-//        rowResult.add( year2004);
-//        rowResult.add( year2005);
-//        }
-//        result.add(rowResult);
-//     }
+     //WEF
+     List<String> wfedFiltered = getWEFDIndicatorsFiltered(wefd);
+     List<String> firstRow =wefd.get(0);
+     for(int i=3; i< 154 ;i++){
         
+        
+        
+        for(int j = 0; j < wfedFiltered.size(); j++) {
+                        
+            List<String> rowResult=new ArrayList<String>();
+            rowResult.add(firstRow.get(i) ); //FkCountry
+            rowResult.add(wfedFiltered.get(j)); //FkIndicator
+            
+            
+            List<List<String>> valuesOfIndicator = this.getValuesOfIndicator(wfedFiltered.get(j),wefd);
+
+            for(int z=valuesOfIndicator.size();z<=35-valuesOfIndicator.size();z++){
+                rowResult.add( null); //Years without information 1980-2005
+            }
+            
+//            System.out.println(valuesOfIndicator.size());
+            for(int z=0;z<valuesOfIndicator.size();z++){
+                rowResult.add(valuesOfIndicator.get(z).get(i));
+            }
+
+            for(int z=0;z<44-rowResult.size();rowResult.add( null)){
+                //rowResult.add( null); //Years without information 2016-end
+            }            
+         result.add(rowResult);
+         
+        }
+        
+     }
+
+//                 for(int i=0;i<result.size();i++){
+//                    if(result.get(i).size()!=45){
+//                        System.out.println(i);
+//                        System.out.println(result.get(i).size());
+//                     
+//                    }
+//                 }            
+     
+     
      //Adding ID   
         
         for(int i = 0; i < result.size(); i++) {
@@ -308,9 +297,10 @@ public class valueExtractor {
         return result;
         
     }
-    public List<List<String>> getValuesOfIndicator(String indicator,
+    public List<List<String>> getValuesOfIndicator( String indicator,
             List<List<String>> wefd){
-        List<List<String>> result= Collections.emptyList();
+     
+        List<List<String>> result= new ArrayList<List<String>>();
         
         for(int i=0; i < wefd.size();i++){
             if(wefd.get(i).get(0).equals(indicator)){
@@ -320,5 +310,21 @@ public class valueExtractor {
      
         
         return result;   
+    }
+    
+    public List<String> getWEFDIndicatorsFiltered(List<List<String>> wefd){
+        List<String> result=new ArrayList<String>();
+        
+        for(int i=1; i<wefd.size(); i++){
+            result.add(wefd.get(i).get(0));
+        }
+        
+        //Removing Duplicates
+        Set<String> hs = new HashSet<>();
+        hs.addAll(result);
+        result.clear();
+        result.addAll(hs);
+
+        return result;
     }
 }
