@@ -5,6 +5,7 @@
  */
 package Core;
 
+import com.sun.org.apache.xerces.internal.impl.xs.identity.ValueStore;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class InfoIntegration {
         wdd = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
 
         valueExtractor ve = new valueExtractor();
-        List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
+        List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd, wdm);
         fl.saveTableToDocument(imf, "\n\r", "\t", "data/new/imf.tsv");
         fl.saveTableToDocument(wefd, "\n\r", "\t", "data/new/wefd.tsv");
         fl.saveTableToDocument(wefe, "\n\r", "\t", "data/new/wefe.tsv");
@@ -51,5 +52,11 @@ public class InfoIntegration {
         fl.saveTableToDocument(countriesTable, "\n\r", "\t", "data/new/country.tsv");
         fl.saveTableToDocument(indicatorsTable, "\n\r", "\t", "data/new/indicator.tsv");
         fl.saveTableToDocument(valuesTable, "\n\r", "\t", "data/new/value.tsv");
+
+        System.out.println(valueExtractor.errorsCounter);
+        for (String val : valueExtractor.setOfErrors.keySet()) {
+            System.out.println(val + " XXX " + valueExtractor.setOfErrors.get(val));
+
+        }
     }
 }

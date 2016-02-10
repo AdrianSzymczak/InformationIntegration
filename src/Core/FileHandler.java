@@ -48,7 +48,11 @@ public class FileHandler {
         return result;
     }
 
-    public void saveTableToDocument(List<List<String>> table, String lineSeparator, String columnSeparator, String path) {
+    public void saveTableToDocument(List<List<String>> table, String lineSeparator, String columnSeparator, String path) throws Exception {
+        if (!TableOperations.validateTable(table)) {
+            throw new Exception("Incorrect table");
+        }
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < table.size(); i++) {
             List<String> line = table.get(i);

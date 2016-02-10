@@ -13,35 +13,41 @@ import java.util.ArrayList;
  */
 public class NumberHelper {
 
-    public static Double handleFloat(String number) {
+    public static Double parseDouble(String number) {
         if (number == null || number == "") {
             return null;
         }
         double multiplier = 0.0;
         String[] splittedNumber;
-        number = number.replace("\\s+", "").toLowerCase();
+        number = number.replaceAll("\\s+", "").toLowerCase();
         if (number.contains("e+")) {
             splittedNumber = number.split("e+");
+            if (splittedNumber.length > 2 || !isNumber(splittedNumber[0]) || !(isNumber(splittedNumber[1]))) {
+                return null;
+            }
             multiplier = Double.parseDouble(splittedNumber[1]);
             number = splittedNumber[0];
         } else {
             if (number.contains("e-")) {
                 splittedNumber = number.split("e-");
+                if (splittedNumber.length > 2 || !isNumber(splittedNumber[0]) || !(isNumber(splittedNumber[1]))) {
+                    return null;
+                }
                 multiplier = -1.0 * Double.parseDouble(splittedNumber[1]);
                 number = splittedNumber[0];
             }
         }
         if (isNumber(number)) {
-            char rightmostSeparator = '-';
-            char nextSeparator = '-';
+            char rightmostSeparator = '*';
+            char nextSeparator = '*';
 
             for (int i = number.length() - 1; i >= 0; i--) {
                 char c = number.charAt(i);
                 if (c == ' ' || c == '.' || c == ',') {
-                    if (rightmostSeparator == '-') {
+                    if (rightmostSeparator == '*') {
                         rightmostSeparator = c;
                     } else {
-                        if (nextSeparator == '-') {
+                        if (nextSeparator == '*') {
                             nextSeparator = c;
                         }
                     }
@@ -54,12 +60,12 @@ public class NumberHelper {
             b[0] = nextSeparator;
             String rightString = String.copyValueOf(a);
             String nextString = String.copyValueOf(b);
-
             if (nextSeparator == rightmostSeparator) {
                 number = number.replace(rightString, "");
             } else {
-                if (nextSeparator != '-') {
+                if (nextSeparator != '*') {
                     number = number.replace(nextString, "");
+                    number = number.replace(rightString, ".");
                 }
             }
             number = number.replace(",", ".");
@@ -72,6 +78,10 @@ public class NumberHelper {
     }
 
     public static boolean isNumber(String number) {
-        return number.matches("^[-+,\\.]?\\d+(.\\d+)*$");
+        if (number == null || number == "") {
+            return false;
+        }
+        number = number.replaceAll("\\s+", "");
+        return number.matches("^[-|+|,|\\.|\\s+]?\\d+([\\s+|,|\\.]?\\d+)*$");
     }
 }
