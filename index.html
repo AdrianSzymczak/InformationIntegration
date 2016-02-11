@@ -11,25 +11,16 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["motionchart"]});
-      google.setOnLoadCallback(drawChart);
-	  
-	  	function drawChart() {
-      var queryString = encodeURIComponent('SELECT A, B, C, D, E');
-      var query = new google.visualization.Query(
-          'https://docs.google.com/spreadsheets/d/1uwFFxkyOUUyZVir-rOKiB_jMBUSE3G98Y6YH9RA2ouo/gviz/tq?gid=0&headers=1&tq=' + queryString);
-      query.send(handleQueryResponse);
-    }
-
-    function handleQueryResponse(response) {
-      if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-      }
-      
-          var data = response.getDataTable();
-        var chart = new google.visualization.MotionChart(document.getElementById('chart_div'));
-
-        chart.draw(data, {width: 1300, height:700});
+	  google.setOnLoadCallback(drawChart); 
+	    google.visualization.drawChart({
+        "containerId": "chart_div",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query":"SELECT 'Fruit', 'Date', 'Sales', 'Expenses', 'Location' FROM " +
+                "1umWYJssidr15IDxYy4gt41BZcyyDGJLYN-O3eR-K",
+        "refreshInterval": 5,
+        "chartType": "Motionchart",
+        "options": {"width: 1300, height:700"}
+     });
       }
     </script>
   </head>
