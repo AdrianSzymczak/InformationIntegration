@@ -20,20 +20,19 @@ import java.util.logging.Logger;
  */
 public class FileHandler {
 
-    public List<List<String>> loadStringToTable(String entry, String lineSeparator, String rowSeparator) throws Exception {
-        List<List<String>> result;
-        String[] splittedByRows;
+    public List<List<String>> loadStringToTable(String entry, String lineSeparator, String rowSeparator) {
         String[] splittedByColumns;
-        int rows;
-        int columns;
-        splittedByRows = entry.split(lineSeparator);
-        rows = splittedByRows.length;
-        result = new ArrayList<List<String>>(rows);
-        columns = splittedByRows[0].split(rowSeparator).length;
+        String[] splittedByRows = entry.split(lineSeparator);
+        int rows = splittedByRows.length;
+        List<List<String>> result = new ArrayList<List<String>>(rows);
+        List<List<String>> emptyResult = new ArrayList<List<String>>(rows);
+        int columns = splittedByRows[0].split(rowSeparator).length;
         for (int i = 0; i < splittedByRows.length; i++) {
             splittedByColumns = splittedByRows[i].split(rowSeparator);
             if (splittedByColumns.length != columns) {
-                return result;
+                Logger.getLogger(FileHandler.class.getName()).log(Level.SEVERE,
+                        "Loading string to table shows it is not rectangular");
+                return emptyResult;
             }
             List<String> row = new ArrayList<>(columns);
             for (int j = 0; j < splittedByColumns.length; j++) {
@@ -41,18 +40,13 @@ public class FileHandler {
             }
             result.add(row);
         }
-        System.out.println(result.size() + "\t" + result.get(0).size());
-        if (!TableOperations.validateTable(result)) {
-            throw new Exception("Incorrect table");
-        }
         return result;
     }
 
     public void saveTableToDocument(List<List<String>> table, String lineSeparator, String columnSeparator, String path) throws Exception {
         if (!TableOperations.validateTable(table)) {
-            throw new Exception("Incorrect table");
+            throw new Exception("Incorrect table to be saved under path: " + path);
         }
-
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < table.size(); i++) {
             List<String> line = table.get(i);
@@ -66,21 +60,23 @@ public class FileHandler {
             Files.write(Paths.get(path), sb.toString().getBytes());
         } catch (IOException ex) {
             Logger.getLogger(FileHandler.class.getName()).log(Level.SEVERE,
-                    "Unable to write file " + path, ex);
+                    "Unable to write file to: " + path, ex);
         }
     }
 
+    public List<List<String>> saveDocumentToTable(String path, String lineSeparator, String rowSeparator) {
+        return loadStringToTable(loadDocument(path), lineSeparator, rowSeparator);
+    }
+
     public String loadDocument(String dirPath) {
-        String result = "";
-        byte[] encoded;
         try {
-            encoded = Files.readAllBytes(Paths.get(dirPath));
-            result = new String(encoded, Charset.defaultCharset());
+            byte[] encoded = Files.readAllBytes(Paths.get(dirPath));
+            return new String(encoded, Charset.defaultCharset());
         } catch (IOException ex) {
             Logger.getLogger(FileHandler.class.getName())
                     .log(Level.SEVERE,
-                            "Unable to read file " + dirPath, ex);
+                            "Unable to read file from path: " + dirPath, ex);
         }
-        return result;
+        return "";
     }
 }

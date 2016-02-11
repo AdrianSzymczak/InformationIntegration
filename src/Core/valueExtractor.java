@@ -22,9 +22,12 @@ import java.util.Map;
  */
 public class valueExtractor {
 
-    public static int errorsCounter = 0;
-    public static Map<String, Integer> setOfErrors = new HashMap<>();
-
+    // TODO move to tests
+/*    public static int errorsCounter = 0;
+     public static Map<String, Integer> setOfErrors = new HashMap<>();
+     public static Map<String, Integer> setOfCountries = new HashMap<>();
+     public static Map<String, Integer> setOfIndicators = new HashMap<>();
+     */
     private void handleNumberCell(List<String> rowResult, String value) {
         if (rowResult == null) {
             return;
@@ -34,12 +37,13 @@ public class valueExtractor {
         } else {
             Double temp = NumberHelper.parseDouble(value);
             if (temp == null) {
-                if (setOfErrors.containsKey(value)) {
-                    setOfErrors.put(value, setOfErrors.get(value) + 1);
-                } else {
-                    setOfErrors.put(value, 1);
-                }
-
+                // TODO move to tests
+                /*            if (setOfErrors.containsKey(value)) {
+                 setOfErrors.put(value, setOfErrors.get(value) + 1);
+                 } else {
+                 setOfErrors.put(value, 1);
+                 }
+                 */
                 rowResult.add(null);
             } else {
                 rowResult.add(temp.toString());

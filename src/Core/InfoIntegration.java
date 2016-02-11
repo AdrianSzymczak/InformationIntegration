@@ -5,8 +5,6 @@
  */
 package Core;
 
-import com.sun.org.apache.xerces.internal.impl.xs.identity.ValueStore;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +15,7 @@ public class InfoIntegration {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
         FileHandler fl = new FileHandler();
@@ -33,8 +32,7 @@ public class InfoIntegration {
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
         wdd = ce.getSourceWithCountryId(wdd, countriesTable);
-
-        wefd = ce.getWEFDWithCountryId(wefd,wefe, countriesTable);
+        wefd = ce.getWEFDWithCountryId(wefd, wefe, countriesTable);
 
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
@@ -44,20 +42,14 @@ public class InfoIntegration {
 
         valueExtractor ve = new valueExtractor();
         List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd, wdm);
-        fl.saveTableToDocument(imf, "\n\r", "\t", "data/new/imf.tsv");
-        fl.saveTableToDocument(wefd, "\n\r", "\t", "data/new/wefd.tsv");
-        fl.saveTableToDocument(wefe, "\n\r", "\t", "data/new/wefe.tsv");
-        fl.saveTableToDocument(wefm, "\n\r", "\t", "data/new/wefm.tsv");
-        fl.saveTableToDocument(wdm, "\n\r", "\t", "data/new/wdm.tsv");
-        fl.saveTableToDocument(wdd, "\n\r", "\t", "data/new/wdd.tsv");
-        fl.saveTableToDocument(countriesTable, "\n\r", "\t", "data/new/country.tsv");
-        fl.saveTableToDocument(indicatorsTable, "\n\r", "\t", "data/new/indicator.tsv");
+        fl.saveTableToDocument(TableOperations.standarizeTable(countriesTable), "\n\r", "\t", "data/new/country.tsv");
+        fl.saveTableToDocument(TableOperations.standarizeTable(indicatorsTable), "\n\r", "\t", "data/new/indicator.tsv");
         fl.saveTableToDocument(valuesTable, "\n\r", "\t", "data/new/value.tsv");
 
-        System.out.println(valueExtractor.errorsCounter);
-        for (String val : valueExtractor.setOfErrors.keySet()) {
-            System.out.println(val + " XXX " + valueExtractor.setOfErrors.get(val));
-
-        }
+        //TODO move to tests
+        /*System.out.println(valueExtractor.errorsCounter);
+         for (String val : valueExtractor.setOfErrors.keySet()) {
+         System.out.println(val + " XXX " + valueExtractor.setOfErrors.get(val));
+         }*/
     }
 }

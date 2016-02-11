@@ -5,6 +5,7 @@
  */
 package Core;
 
+import helpers.TextCleaningHelper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,15 @@ import java.util.Map;
  * @author Adrian
  */
 public class TableOperations {
+
+    public static List<List<String>> standarizeTable(List<List<String>> table) {
+        for (int i = 0; i < table.size(); i++) {
+            for (int j = 0; j < table.get(i).size(); j++) {
+                table.get(i).set(j, TextCleaningHelper.clean(table.get(i).get(j)));
+            }
+        }
+        return table;
+    }
 
     public static boolean validateTable(List<List<String>> table) {
         int n = table.get(0).size();
