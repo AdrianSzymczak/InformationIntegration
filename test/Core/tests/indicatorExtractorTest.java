@@ -110,13 +110,11 @@ public class indicatorExtractorTest {
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
         wdd = ce.getSourceWithCountryId(wdd, countriesTable);
+        wefd = ce.getWEFDWithCountryId(wefd, countriesTable);
 
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
-        imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
-        wefm = ie.getWEFDWithIndicatorId(wefe, indicatorsTable);
-        wdm = ie.getWDDWithIndicatorId(wdd, indicatorsTable);
-
+        
         int firstRowSize = indicatorsTable.get(0).size();
         for (int i = 1; i < indicatorsTable.size(); i++) {
             List<String> rowReaded = indicatorsTable.get(i);

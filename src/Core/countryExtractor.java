@@ -77,20 +77,29 @@ public class countryExtractor {
         hs.addAll(result);
         result.clear();
         result.addAll(hs);
-
+        
         //Adding ID   
         for (int i = 0; i < result.size(); i++) {
             String id = Integer.toString(i + 1);
             result.get(i).add(0, id);
-//            
-//            List<String> rowReaded= result.get(i);
-//            System.out.println(rowReaded.get(0));
-//            System.out.println(rowReaded.get(1));
-//            System.out.println(rowReaded.get(2));
-//            System.out.println(rowReaded.get(3));
-//            System.out.println(rowReaded.get(4));
         }
 
+        //Solving duplicate conflicts   
+        for (int i = 0; i < result.size(); i++) {
+            int count =0;
+            for (int j = 0; j < result.size(); j++) {
+                if(result.get(i).get(1).equals(result.get(j).get(1))
+                   || result.get(i).get(2).equals(result.get(j).get(2))){
+                    count++;
+                }
+            }
+            
+            if(count>1){
+                result.remove(i);
+                i--;
+            }
+        }        
+        
         return result;
 
     }
@@ -125,6 +134,7 @@ public class countryExtractor {
     }
     
     public List<List<String>> getWEFDWithCountryId(List<List<String>> wefd,
+            List<List<String>> wefe,
             List<List<String>> countries){
         List<String> newFirstRow = wefd.get(0);
         
