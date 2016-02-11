@@ -10,18 +10,20 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
-      google.load("visualization", "1", {packages:["motionchart"]});
-	  google.setOnLoadCallback(drawChart); 
-	    google.visualization.drawChart({
-        "containerId": "chart_div",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'Fruit', 'Date', 'Sales', 'Expenses', 'Location' FROM " +
-                "1umWYJssidr15IDxYy4gt41BZcyyDGJLYN-O3eR-K",
-        "refreshInterval": 5,
-        "chartType": "Motionchart",
-        "options": {"width: 1300, height:700"}
-     });
-      }
+       google.load("visualization", "1", {packages:["motionchart"]});
+	   google.setOnLoadCallback(drawVisualization);
+	
+		function drawVisualization() {
+		google.visualization.drawChart({
+			"containerId": "chart_div",
+			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+			"query":"SELECT 'Fruit', 'Date', 'Sales', 'Expenses', 'Location' FROM " +
+					"1umWYJssidr15IDxYy4gt41BZcyyDGJLYN-O3eR-K",
+			"refreshInterval": 5,
+			"chartType": "Motionchart",
+			"options": {}
+		});
+		}
     </script>
   </head>
   <body>
