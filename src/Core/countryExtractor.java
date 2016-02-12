@@ -134,7 +134,6 @@ public class countryExtractor {
     }
 
     public List<List<String>> getWEFDWithCountryId(List<List<String>> wefd,
-            List<List<String>> wefe,
             List<List<String>> countries) {
         List<String> newFirstRow = wefd.get(0);
 

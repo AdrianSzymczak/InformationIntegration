@@ -32,7 +32,7 @@ public class InfoIntegration {
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
         wdd = ce.getSourceWithCountryId(wdd, countriesTable);
-        wefd = ce.getWEFDWithCountryId(wefd, wefe, countriesTable);
+        wefd = ce.getWEFDWithCountryId(wefd, countriesTable);
 
         indicatorExtractor ie = new indicatorExtractor();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);

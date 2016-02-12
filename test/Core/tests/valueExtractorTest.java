@@ -69,7 +69,7 @@ public class valueExtractorTest {
         List<List<String>> valuesTable = ve.getValues(imf, wefd, wefe, wefm, wdd,wdm);
 
         assertEquals(valuesTable.get(0).get(0),"1");
-        assertEquals(valuesTable.get(0).get(1),"141");
+        assertEquals(valuesTable.get(0).get(1),"144");
         assertEquals(valuesTable.get(0).get(2),"4556");
      }
     
