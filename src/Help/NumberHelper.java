@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package helpers;
+package Help;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Adrian
  */
 public class NumberHelper {
-
+    
     public static Double parseDouble(String number) {
         if (number == null || number == "") {
             return null;

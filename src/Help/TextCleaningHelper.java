@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package helpers;
+package Help;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -123,9 +123,10 @@ public class TextCleaningHelper {
     }
 
     public static String clean(String s) {
-        if (s == null || s == "") {
-            return s;
+        if (s == null || s.isEmpty() || s.trim().isEmpty()) {
+            return "unknown";
         }
+        
         for (Map.Entry<String, String> entry : forbiddenSignsTranslations.entrySet()) {
             s = s.replace(entry.getKey(), " " + entry.getValue() + " ");
         }

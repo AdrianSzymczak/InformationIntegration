@@ -6,6 +6,8 @@ package Core.tests;
  * and open the template in the editor.
  */
 
+import Utils.FileHandler;
+import Handlers.HandlerCountries;
 import Core.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +54,7 @@ public class countryExtractorTest {
         List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("data/WD-metadata.tsv"), "\n", "\t");
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("data/WD-data.csv"), "\n", ";");
         
-        countryExtractor ce = new countryExtractor();
+        HandlerCountries ce = new HandlerCountries();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
 
         assertEquals(countriesTable.get(0).get(0), "1");
@@ -71,7 +73,7 @@ public class countryExtractorTest {
         List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("data/WD-metadata.tsv"), "\n", "\t");
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("data/WD-data.csv"), "\n", ";");
 
-        countryExtractor ce = new countryExtractor();
+        HandlerCountries ce = new HandlerCountries();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
@@ -93,7 +95,7 @@ public class countryExtractorTest {
         List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("data/WD-metadata.tsv"), "\n", "\t");
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("data/WD-data.csv"), "\n", ";");
         
-        countryExtractor ce = new countryExtractor();
+        HandlerCountries ce = new HandlerCountries();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);

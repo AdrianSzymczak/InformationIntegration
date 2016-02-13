@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core;
+package Handlers;
 
 import java.util.*;
 
@@ -11,7 +11,28 @@ import java.util.*;
  *
  * @author facu
  */
-public class countryExtractor {
+public class HandlerCountries {
+
+    public static List<List<String>> usedCountries(List<List<String>> countriesTable, List<List<String>> resTable) {
+        Set<String> used = new HashSet<String>();
+        for (List<String> l : resTable) {
+            used.add(l.get(0));
+        }
+        List<List<String>> res = new ArrayList<List<String>>();
+        for (List<String> l : countriesTable) {
+            if (used.contains(l.get(0))) {
+                res.add(l);
+            }
+        }
+        res.add(0, Models.Country.headerFull);
+        return res;
+    }
+      
+    public static void changeTextToObjects(List<List<String>> table) {
+        for (List<String> l : table) {
+            new Models.Country(l);
+        }
+    }
 
     public List<List<String>> getCountries(List<List<String>> imf,
             List<List<String>> wefe, List<List<String>> wdd) throws Exception {

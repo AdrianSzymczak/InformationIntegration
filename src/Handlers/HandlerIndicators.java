@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core;
+package Handlers;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,9 +12,36 @@ import java.util.Set;
 
 /**
  *
- * @author facu 
+ * @author facu
  */
-public class indicatorExtractor {
+public class HandlerIndicators {
+
+    public static List<List<String>> usedIndicators(List<List<String>> indicatorsTable, List<List<String>> resTable) throws Exception {
+        int number = 1;
+        boolean found = false;
+        String tempId;
+        List<List<String>> res = new ArrayList<List<String>>();
+        for (int i = 0; i < resTable.get(0).size(); i++) {
+            if (resTable.get(0).get(i).startsWith("indicator-")) {
+                tempId = resTable.get(0).get(i).replace("indicator-", "");
+                resTable.get(0).set(i, "indicator-" + number);
+                for (List<String> l : indicatorsTable) {
+                    if (l.get(0).equals(tempId)) {
+                        List<String> newList = new ArrayList<String>();
+                        newList.addAll(l);
+                        newList.set(0, String.valueOf(number++));
+                        res.add(newList);
+                        found = true;
+                    }
+                }
+                if (found == false) {
+                    throw new Exception("unexpected table content");
+                }
+            }
+        }
+        res.add(0, Models.Indicator.header);
+        return res;
+    }
 
     public List<List<String>> getIndicators(List<List<String>> imf,
             List<List<String>> wefm, List<List<String>> wddm) throws Exception {
@@ -106,13 +133,6 @@ public class indicatorExtractor {
         for (int i = 0; i < result.size(); i++) {
             String id = Integer.toString(i + 1);
             result.get(i).add(0, id);
-//            
-//            List<String> rowReaded= result.get(i);
-//            System.out.println(rowReaded.get(0));
-//            System.out.println(rowReaded.get(1));
-//            System.out.println(rowReaded.get(2));
-//            System.out.println(rowReaded.get(3));
-//            System.out.println(rowReaded.get(4));
         }
 
         return result;
@@ -171,7 +191,7 @@ public class indicatorExtractor {
         for (int i = 0; i < indicators.size(); i++) {
             List<String> rowIndicator = indicators.get(i);
 
-            if ((rowIndicator.get(2)!=null)&&rowIndicator.get(2).equals(source.get(4))) {
+            if ((rowIndicator.get(2) != null) && rowIndicator.get(2).equals(source.get(4))) {
                 //System.out.println(rowIndicator.get(2));
                 id = rowIndicator.get(0);
             }
@@ -186,7 +206,7 @@ public class indicatorExtractor {
         for (int i = 0; i < indicators.size(); i++) {
             List<String> rowIndicator = indicators.get(i);
 
-            if ((rowIndicator.get(1) != null)&&(rowIndicator.get(1).equals(source.get(3)))) {
+            if ((rowIndicator.get(1) != null) && (rowIndicator.get(1).equals(source.get(3)))) {
                 id = rowIndicator.get(0);
             }
         }
@@ -200,7 +220,7 @@ public class indicatorExtractor {
         for (int i = 0; i < indicators.size(); i++) {
             List<String> rowIndicator = indicators.get(i);
 
-            if ((rowIndicator.get(1) != null)&&(rowIndicator.get(1).equals(source.get(1)))) {
+            if ((rowIndicator.get(1) != null) && (rowIndicator.get(1).equals(source.get(1)))) {
                 id = rowIndicator.get(0);
             }
         }

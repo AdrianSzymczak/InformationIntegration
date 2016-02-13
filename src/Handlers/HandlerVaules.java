@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core;
+package Handlers;
 
-import helpers.NumberHelper;
+import Help.NumberHelper;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -20,31 +20,31 @@ import java.util.Map;
  *
  * @author facu
  */
-public class valueExtractor {
+public class HandlerVaules {
 
-    // TODO move to tests
-/*    public static int errorsCounter = 0;
-     public static Map<String, Integer> setOfErrors = new HashMap<>();
-     public static Map<String, Integer> setOfCountries = new HashMap<>();
-     public static Map<String, Integer> setOfIndicators = new HashMap<>();
-     */
+    public static Double replacemementNumber = 0.0;
+    public static String replacemementNumberString = replacemementNumber.toString();
+
+    private boolean shouldProceed(String k1, String k2) {
+        try {
+            int i = Integer.parseInt(k1);
+            int j = Integer.parseInt(k2);
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+        return true;
+    }
+
     private void handleNumberCell(List<String> rowResult, String value) {
         if (rowResult == null) {
             return;
         }
-        if (value == null) {
-            rowResult.add(null);
+        if (value == null || value == "") {
+            rowResult.add(replacemementNumberString);
         } else {
             Double temp = NumberHelper.parseDouble(value);
             if (temp == null) {
-                // TODO move to tests
-                /*            if (setOfErrors.containsKey(value)) {
-                 setOfErrors.put(value, setOfErrors.get(value) + 1);
-                 } else {
-                 setOfErrors.put(value, 1);
-                 }
-                 */
-                rowResult.add(null);
+                rowResult.add(replacemementNumberString);
             } else {
                 rowResult.add(temp.toString());
             }
@@ -64,14 +64,18 @@ public class valueExtractor {
 
             String fk_country = rowReaded.get(0);
             String fk_indicator = rowReaded.get(3);
-            rowResult.add(fk_country);
-            rowResult.add(fk_indicator);
 
-            for (int k = 8; k < 50; k++) {
-                handleNumberCell(rowResult, rowReaded.get(k));
+            if (shouldProceed(fk_country, fk_indicator)) {
+
+                rowResult.add(fk_country);
+                rowResult.add(fk_indicator);
+
+                for (int k = 8; k < 50; k++) {
+                    handleNumberCell(rowResult, rowReaded.get(k));
+                }
+
+                result.add(rowResult);
             }
-
-            result.add(rowResult);
         }
 
         //WD
@@ -82,24 +86,27 @@ public class valueExtractor {
             String fk_country = rowReaded.get(1);
             String fk_indicator = rowReaded.get(0);
 
-            rowResult.add(fk_country);
-            rowResult.add(fk_indicator);
+            if (shouldProceed(fk_country, fk_indicator)) {
 
-            // these years don't exist in this dataset
-            for (int k = 1980; k < 1996; k++) {
-                handleNumberCell(rowResult, null);
+                rowResult.add(fk_country);
+                rowResult.add(fk_indicator);
+
+                // these years don't exist in this dataset
+                for (int k = 1980; k < 1996; k++) {
+                    handleNumberCell(rowResult, null);
+                }
+
+                for (int k = 5; k < 25; k++) {
+                    handleNumberCell(rowResult, rowReaded.get(k));
+                }
+
+                // these years don't exist in this dataset plus column estimates
+                for (int k = 2016; k < 2022; k++) {
+                    handleNumberCell(rowResult, null);
+                }
+
+                result.add(rowResult);
             }
-
-            for (int k = 5; k < 25; k++) {
-                handleNumberCell(rowResult, rowReaded.get(k));
-            }
-
-            // these years don't exist in this dataset plus column estimates
-            for (int k = 2016; k < 2022; k++) {
-                handleNumberCell(rowResult, null);
-            }
-
-            result.add(rowResult);
         }
 
         //WEF
@@ -110,25 +117,26 @@ public class valueExtractor {
             for (int j = 0; j < wfedFiltered.size(); j++) {
 
                 List<String> rowResult = new ArrayList<String>();
-                rowResult.add(firstRow.get(i)); //FkCountry
-                rowResult.add(wfedFiltered.get(j)); //FkIndicator
 
-                List<List<String>> valuesOfIndicator = this.getValuesOfIndicator(wfedFiltered.get(j), wefd);
+                if (shouldProceed(firstRow.get(i), wfedFiltered.get(j))) {
+                    rowResult.add(firstRow.get(i)); //FkCountry
+                    rowResult.add(wfedFiltered.get(j)); //FkIndicator
+                    List<List<String>> valuesOfIndicator = this.getValuesOfIndicator(wfedFiltered.get(j), wefd);
 
-                for (int z = valuesOfIndicator.size(); z <= 35 - valuesOfIndicator.size(); z++) {
-                    rowResult.add(null); //Years without information 1980-2005
-                }
+                    for (int z = valuesOfIndicator.size(); z <= 35 - valuesOfIndicator.size(); z++) {
+                        rowResult.add(replacemementNumberString); //Years without information 1980-2005
+                    }
 
 //            System.out.println(valuesOfIndicator.size());
-                for (int z = 0; z < valuesOfIndicator.size(); z++) {
-                    handleNumberCell(rowResult, valuesOfIndicator.get(z).get(i));
-                }
+                    for (int z = 0; z < valuesOfIndicator.size(); z++) {
+                        handleNumberCell(rowResult, valuesOfIndicator.get(z).get(i));
+                    }
 
-                for (int z = 0; z < 44 - rowResult.size(); rowResult.add(null)) {
-                    //rowResult.add( null); //Years without information 2016-end
+                    for (int z = 0; z < 44 - rowResult.size(); rowResult.add(replacemementNumberString)) {
+                        //rowResult.add( null); //Years without information 2016-end
+                    }
+                    result.add(rowResult);
                 }
-                result.add(rowResult);
-
             }
 
         }

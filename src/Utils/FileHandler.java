@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core;
+package Utils;
 
+import Utils.TableOperations;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;

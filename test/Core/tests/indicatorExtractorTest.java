@@ -6,6 +6,9 @@ package Core.tests;
  * and open the template in the editor.
  */
 
+import Utils.FileHandler;
+import Handlers.HandlerIndicators;
+import Handlers.HandlerCountries;
 import Core.*;
 import java.util.List;
 import org.junit.After;
@@ -51,13 +54,13 @@ public class indicatorExtractorTest {
         List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("data/WD-metadata.tsv"), "\n", "\t");
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("data/WD-data.csv"), "\n", ";");
 
-        countryExtractor ce = new countryExtractor();
+        HandlerCountries ce = new HandlerCountries();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
         wdd = ce.getSourceWithCountryId(wdd, countriesTable);
 
-        indicatorExtractor ie = new indicatorExtractor();
+        HandlerIndicators ie = new HandlerIndicators();
         List<List<String>> indicatorTable = ie.getIndicators(imf, wefm, wdm);
 
         assertEquals(indicatorTable.get(11).get(0), "12");
@@ -77,13 +80,13 @@ public class indicatorExtractorTest {
         List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("data/WD-metadata.tsv"), "\n", "\t");
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("data/WD-data.csv"), "\n", ";");
 
-        countryExtractor ce = new countryExtractor();
+        HandlerCountries ce = new HandlerCountries();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
         wdd = ce.getSourceWithCountryId(wdd, countriesTable);
 
-        indicatorExtractor ie = new indicatorExtractor();
+        HandlerIndicators ie = new HandlerIndicators();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         imf = ie.getIMFWithIndicatorId(imf, indicatorsTable);
         wefm = ie.getWEFDWithIndicatorId(wefe, indicatorsTable);
@@ -105,14 +108,14 @@ public class indicatorExtractorTest {
         List<List<String>> wdm = fl.loadStringToTable(fl.loadDocument("data/WD-metadata.tsv"), "\n", "\t");
         List<List<String>> wdd = fl.loadStringToTable(fl.loadDocument("data/WD-data.csv"), "\n", ";");
 
-        countryExtractor ce = new countryExtractor();
+        HandlerCountries ce = new HandlerCountries();
         List<List<String>> countriesTable = ce.getCountries(imf, wefe, wdd);
         imf = ce.getSourceWithCountryId(imf, countriesTable);
         wefe = ce.getSourceWithCountryId(wefe, countriesTable);
         wdd = ce.getSourceWithCountryId(wdd, countriesTable);
         wefd = ce.getWEFDWithCountryId(wefd, countriesTable);
 
-        indicatorExtractor ie = new indicatorExtractor();
+        HandlerIndicators ie = new HandlerIndicators();
         List<List<String>> indicatorsTable = ie.getIndicators(imf, wefm, wdm);
         
         int firstRowSize = indicatorsTable.get(0).size();

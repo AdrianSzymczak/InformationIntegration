@@ -5,8 +5,8 @@
  */
 package helpers.tests;
 
-import Core.FileHandler;
-import helpers.NumberHelper;
+import Utils.FileHandler;
+import Help.NumberHelper;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
