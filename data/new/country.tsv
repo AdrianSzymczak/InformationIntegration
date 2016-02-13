@@ -1,198 +1,197 @@
-1	ATG	Antigua and Barbuda	null	null	
-14	BLR	Belarus	null	null	
-37	KGZ	Kyrgyz Republic	null	null	
-41	FSM	Micronesia	null	null	
-45	KSV	Kosovo	null	null	
-58	TKM	Turkmenistan	null	null	
-60	MAR	Morocco	null	null	
-64	PRI	Puerto Rico	 	 	
-65	DZA	Algeria	Upper middle income	Middle East comma North Africa comma and Pakistan	
-68	GIN	Guinea	null	null	
-69	NPL	Nepal	null	null	
-72	MCO	Monaco	null	null	
-75	SLB	Solomon Islands	null	null	
-79	GNQ	Equatorial Guinea	null	null	
-80	TCD	Chad	null	null	
-87	PNG	Papua New Guinea	null	null	
-88	TON	Tonga	null	null	
-89	VUT	Vanuatu	null	null	
-91	ADO	Andorra	null	null	
-93	THA	Thailand	Upper middle income	Emerging and Developing Asia	
-95	UKR	Ukraine	Lower middle income	Commonwealth of Independent States	
-99	TLS	Timor minus sign Leste	Lower middle income	Emerging and Developing Asia	
-101	LIE	Liechtenstein	null	null	
-105	URY	Uruguay	High income colon nonOECD	Latin America and the Caribbean	
-108	DJI	Djibouti	null	null	
-111	IMY	Isle of Man	null	null	
-113	KOR	Korea comma Rep period 	High income colon OECD	Advanced economies	
-114	MUS	Mauritius	null	null	
-116	ROM	Romania	null	null	
-117	BEN	Benin	null	null	
-118	LTU	Lithuania	High income colon nonOECD	Emerging and Developing Europe	
-125	GNB	Guinea minus sign Bissau	null	null	
-126	HKG	Hong Kong SAR	High income colon nonOECD	Advanced economies	
-127	ARE	United Arab Emirates	null	null	
-129	BEL	Belgium	High income colon OECD	Advanced economies	
-131	MDV	Maldives	null	null	
-144	AFG	Afghanistan	null	null	
-146	SEN	Senegal	null	null	
-147	LAO	Lao PDR	Lower middle income	Emerging and Developing Asia	
-148	MDA	Moldova	Lower middle income	Commonwealth of Independent States	
-150	TWN	Taiwan comma China	 	Advanced economies	
-151	TUR	Turkey	null	null	
-153	BIH	Bosnia and Herzegovina	Upper middle income	Emerging and Developing Europe	
-158	KHM	Cambodia	null	null	
-159	SGP	Singapore	High income colon nonOECD	Advanced economies	
-160	TGO	Togo	null	null	
-165	IRN	Iran comma Islamic Rep period 	null	null	
-166	KEN	Kenya	Low income	Sub minus sign Saharan Africa	
-170	MMR	Myanmar	null	null	
-171	COL	Colombia	Upper middle income	Latin America and the Caribbean	
-174	AUT	Austria	High income colon OECD	Advanced economies	
-175	PAK	Pakistan	Lower middle income	Middle East comma North Africa comma and Pakistan	
-178	TZA	Tanzania	null	null	
-179	FRO	Faeroe Islands	null	null	
-181	GRC	Greece	null	null	
-182	BHS	The Bahamas	null	null	
-183	UZB	Uzbekistan	null	null	
-184	MHL	Marshall Islands	null	null	
-185	OMN	Oman	null	null	
-186	TUN	Tunisia	Upper middle income	Middle East comma North Africa comma and Pakistan	
-188	ARG	Argentina	Upper middle income	Latin America and the Caribbean	
-191	GHA	Ghana	Lower middle income	Sub minus sign Saharan Africa	
-193	FRA	France	High income colon OECD	Advanced economies	
-194	ZWE	Zimbabwe	Low income	Sub minus sign Saharan Africa	
-195	WSM	Samoa	null	null	
-196	CYP	Cyprus	null	null	
-197	NOR	Norway	null	null	
-198	SUR	Suriname	null	null	
-199	HUN	Hungary	Upper middle income	Emerging and Developing Europe	
-200	USA	United States	High income colon OECD	Advanced economies	
-202	FJI	Fiji	null	null	
-204	BFA	Burkina Faso	Low income	Sub minus sign Saharan Africa	
-205	SSD	South Sudan	null	null	
-206	SWE	Sweden	null	null	
-207	CRI	Costa Rica	Upper middle income	Latin America and the Caribbean	
-209	COD	Democratic Republic of the Congo	null	null	
-212	POL	Poland	null	null	
-213	VEN	Venezuela	null	null	
-214	FIN	Finland	High income colon OECD	Advanced economies	
-218	NER	Niger	null	null	
-219	LCA	St period Lucia	null	null	
-220	COM	Comoros	null	null	
-221	RWA	Rwanda	null	null	
-222	GAB	Gabon	null	null	
-223	GMB	Gambia comma The	Low income	Sub minus sign Saharan Africa	
-224	GTM	Guatemala	null	null	
-227	SAU	Saudi Arabia	High income colon nonOECD	Middle East comma North Africa comma and Pakistan	
-228	LBY	Libya	null	null	
-229	LBR	Liberia	Low income	Sub minus sign Saharan Africa	
-230	SYR	Syria	null	null	
-231	ALB	Albania	Upper middle income	Emerging and Developing Europe	
-233	JPN	Japan	High income colon OECD	Advanced economies	
-234	SVN	Slovenia	High income colon OECD	Advanced economies	
-235	MRT	Mauritania	null	null	
-236	BWA	Botswana	Upper middle income	Sub minus sign Saharan Africa	
-237	MOZ	Mozambique	null	null	
-238	SLV	El Salvador	Lower middle income	Latin America and the Caribbean	
-240	GBR	United Kingdom	null	null	
-241	BRN	Brunei Darussalam	High income colon nonOECD	Emerging and Developing Asia	
-242	CAF	Central African Republic	null	null	
-243	LUX	Luxembourg	null	null	
-244	BRA	Brazil	Upper middle income	Latin America and the Caribbean	
-245	UGA	Uganda	Low income	Sub minus sign Saharan Africa	
-246	ISR	Israel	null	null	
-247	ITA	Italy	null	null	
-248	KNA	St period Kitts and Nevis	null	null	
-249	DOM	Dominican Republic	Upper middle income	Latin America and the Caribbean	
-250	TJK	Tajikistan	Low income	Commonwealth of Independent States	
-251	NIC	Nicaragua	null	null	
-252	PLW	Palau	null	null	
-254	GRL	Greenland	null	null	
-256	QAT	Qatar	High income colon nonOECD	Middle East comma North Africa comma and Pakistan	
-257	IRQ	Iraq	null	null	
-258	VNM	Vietnam	null	null	
-260	IRL	Ireland	null	null	
-262	SMR	San Marino	null	null	
-263	BGD	Bangladesh	Low income	Emerging and Developing Asia	
-264	EGY	Egypt	Lower middle income	Middle East comma North Africa comma and Pakistan	
-265	AUS	Australia	null	null	
-266	ESP	Spain	null	null	
-267	MYS	Malaysia	Upper middle income	Emerging and Developing Asia	
-268	MLT	Malta	null	null	
-269	BLZ	Belize	null	null	
-270	IDN	Indonesia	Lower middle income	Emerging and Developing Asia	
-271	SLE	Sierra Leone	null	null	
-272	CZE	Czech Republic	High income colon OECD	Advanced economies	
-273	JOR	Jordan	null	null	
-274	ETH	Ethiopia	Low income	Sub minus sign Saharan Africa	
-275	DMA	Dominica	null	null	
-276	CIV	Ivory Coast	Lower middle income	Sub minus sign Saharan Africa	
-277	AGO	Angola	null	null	
-278	LBN	Lebanon	Upper middle income	Middle East comma North Africa comma and Pakistan	
-279	SRB	Serbia	Upper middle income	Emerging and Developing Europe	
-280	CMR	Cameroon	Lower middle income	Sub minus sign Saharan Africa	
-281	HTI	Haiti	Low income	Latin America and the Caribbean	
-282	CHL	Chile	High income colon OECD	Latin America and the Caribbean	
-283	DNK	Denmark	null	null	
-284	HND	Honduras	null	null	
-285	KWT	Kuwait	null	null	
-286	EST	Estonia	null	null	
-287	KAZ	Kazakhstan	Upper middle income	Commonwealth of Independent States	
-288	MEX	Mexico	Upper middle income	Latin America and the Caribbean	
-289	MNG	Mongolia	Lower middle income	Emerging and Developing Asia	
-291	MKD	Macedonia comma FYR	Upper middle income	Emerging and Developing Europe	
-292	ARM	Armenia	null	null	
-293	NAM	Namibia	null	null	
-294	CHE	Switzerland	null	null	
-296	PRT	Portugal	High income colon OECD	Advanced economies	
-297	MDG	Madagascar	Low income	Sub minus sign Saharan Africa	
-299	ZMB	Zambia	Lower middle income	Sub minus sign Saharan Africa	
-300	BDI	Burundi	Low income	Sub minus sign Saharan Africa	
-301	CPV	Cape Verde	Lower middle income	Sub minus sign Saharan Africa	
-302	MLI	Mali	Low income	Sub minus sign Saharan Africa	
-304	NZL	New Zealand	null	null	
-305	VCT	St period Vincent and the Grenadines	null	null	
-306	IND	India	Lower middle income	Emerging and Developing Asia	
-307	YEM	Yemen	null	null	
-309	MWI	Malawi	Low income	Sub minus sign Saharan Africa	
-310	BGR	Bulgaria	null	null	
-311	STP	S o Tom and Pr ncipe	null	null	
-312	CAN	Canada	null	null	
-313	PHL	Philippines	Lower middle income	Emerging and Developing Asia	
-314	RUS	Russian Federation	High income colon nonOECD	Commonwealth of Independent States	
-315	BTN	Bhutan	Lower middle income	Emerging and Developing Asia	
-316	BOL	Bolivia	null	null	
-318	COG	Republic of Congo	null	null	
-319	LKA	Sri Lanka	Lower middle income	Emerging and Developing Asia	
-320	PRY	Paraguay	Lower middle income	Latin America and the Caribbean	
-321	LVA	Latvia	null	null	
-322	PAN	Panama	Upper middle income	Latin America and the Caribbean	
-323	SYC	Seychelles	null	null	
-324	NGA	Nigeria	null	null	
-325	GEO	Georgia	null	null	
-326	SDN	Sudan	null	null	
-327	BHR	Bahrain	High income colon nonOECD	Middle East comma North Africa comma and Pakistan	
-328	GUY	Guyana	Lower middle income	Latin America and the Caribbean	
-329	ISL	Iceland	High income colon OECD	Advanced economies	
-330	CHI	Channel Islands	null	null	
-331	ERI	Eritrea	null	null	
-332	ZAF	South Africa	null	null	
-333	TTO	Trinidad and Tobago	null	null	
-334	MNE	Montenegro	Upper middle income	Emerging and Developing Europe	
-335	AZE	Azerbaijan	Upper middle income	Commonwealth of Independent States	
-336	HRV	Croatia	High income colon nonOECD	Emerging and Developing Europe	
-337	JAM	Jamaica	null	null	
-338	SVK	Slovak Republic	null	null	
-339	PER	Peru	Upper middle income	Latin America and the Caribbean	
-340	NLD	Netherlands	null	null	
-341	KIR	Kiribati	null	null	
-342	BRB	Barbados	High income colon nonOECD	Latin America and the Caribbean	
-343	ECU	Ecuador	Upper middle income	Latin America and the Caribbean	
-344	SWZ	Swaziland	Lower middle income	Sub minus sign Saharan Africa	
-345	LSO	Lesotho	null	null	
-346	TUV	Tuvalu	null	null	
-347	GRD	Grenada	null	null	
-348	CHN	China	null	null	
-349	DEU	Germany	High income colon OECD	Advanced economies	
-
+2	PNG	Papua New Guinea	unknown	unknown	
+5	IRQ	Iraq	unknown	unknown	
+9	SMR	San Marino	unknown	unknown	
+16	ERI	Eritrea	unknown	unknown	
+18	SVK	Slovak Republic	High income colon OECD	Advanced economies 	
+22	BOL	Bolivia	unknown	unknown	
+24	HKG	Hong Kong SAR	unknown	unknown	
+31	FRO	Faeroe Islands	unknown	unknown	
+35	COG	Republic of Congo	unknown	unknown	
+44	NER	Niger	unknown	unknown	
+48	ATG	Antigua and Barbuda	unknown	unknown	
+53	COD	Democratic Republic of the Congo	unknown	unknown	
+54	VCT	St period Vincent and the Grenadines	unknown	unknown	
+56	CPV	Cabo Verde	unknown	unknown	
+59	CHN	China	unknown	unknown	
+60	PAN	Panama	unknown	unknown	
+69	ECU	Ecuador	unknown	unknown	
+70	NAM	Namibia	unknown	unknown	
+72	TZA	Tanzania	unknown	unknown	
+74	KAZ	Kazakhstan	Upper middle income	Commonwealth of Independent States 	
+77	KNA	St period Kitts and Nevis	unknown	unknown	
+87	SSD	South Sudan	unknown	unknown	
+90	CHI	Channel Islands	unknown	unknown	
+93	MDV	Maldives	unknown	unknown	
+94	TUV	Tuvalu	unknown	unknown	
+98	VUT	Vanuatu	unknown	unknown	
+100	NZL	New Zealand	High income colon OECD	Advanced economies 	
+101	SUR	Suriname	Upper middle income	Latin America and the Caribbean 	
+103	MHL	Marshall Islands	unknown	unknown	
+109	ISR	Israel	unknown	unknown	
+114	AZE	Azerbaijan	unknown	unknown	
+116	TON	Tonga	unknown	unknown	
+118	MUS	Mauritius	unknown	unknown	
+120	JPN	Japan	High income colon OECD	Advanced economies 	
+121	GAB	Gabon	Upper middle income	Sub minus sign Saharan Africa 	
+122	GBR	United Kingdom	High income colon OECD	Advanced economies 	
+125	UKR	Ukraine	unknown	unknown	
+127	GRC	Greece	unknown	unknown	
+133	CAN	Canada	High income colon OECD	Advanced economies 	
+134	ARG	Argentina	Upper middle income	Latin America and the Caribbean 	
+135	SLE	Sierra Leone	unknown	unknown	
+140	AUT	Austria	High income colon OECD	Advanced economies 	
+142	JAM	Jamaica	Upper middle income	Latin America and the Caribbean 	
+143	CHL	Chile	unknown	unknown	
+144	MMR	Myanmar	unknown	unknown	
+152	CIV	Ivory Coast	unknown	unknown	
+153	EGY	Egypt	Lower middle income	Middle East comma North Africa comma and Pakistan 	
+155	ARE	United Arab Emirates	unknown	unknown	
+157	SRB	Serbia	unknown	unknown	
+159	LBR	Liberia	unknown	unknown	
+161	OMN	Oman	High income colon nonOECD	Middle East comma North Africa comma and Pakistan 	
+162	COL	Colombia	Upper middle income	Latin America and the Caribbean 	
+163	USA	United States	unknown	unknown	
+165	TTO	Trinidad and Tobago	unknown	unknown	
+166	DJI	Djibouti	unknown	unknown	
+168	ROM	Romania	Upper middle income	Emerging and Developing Europe 	
+169	PLW	Palau	unknown	unknown	
+170	PHL	Philippines	unknown	unknown	
+171	ALB	Albania	Upper middle income	Emerging and Developing Europe 	
+172	HTI	Haiti	Low income	Latin America and the Caribbean 	
+174	HND	Honduras	unknown	unknown	
+175	SLB	Solomon Islands	unknown	unknown	
+179	WSM	Samoa	unknown	unknown	
+180	QAT	Qatar	High income colon nonOECD	Middle East comma North Africa comma and Pakistan 	
+181	STP	S o Tom and Pr ncipe	unknown	unknown	
+182	ISL	Iceland	unknown	unknown	
+183	IND	India	Lower middle income	Emerging and Developing Asia 	
+184	BWA	Botswana	Upper middle income	Sub minus sign Saharan Africa 	
+187	LIE	Liechtenstein	unknown	unknown	
+190	GTM	Guatemala	unknown	unknown	
+191	FJI	Fiji	unknown	unknown	
+193	GRL	Greenland	unknown	unknown	
+194	GNB	Guinea minus sign Bissau	unknown	unknown	
+196	POL	Poland	High income colon OECD	Emerging and Developing Europe 	
+199	RWA	Rwanda	unknown	unknown	
+200	MYS	Malaysia	Upper middle income	Emerging and Developing Asia 	
+202	MNG	Mongolia	unknown	unknown	
+204	TKM	Turkmenistan	unknown	unknown	
+207	TWN	Taiwan comma China	unknown	unknown	
+208	BGR	Bulgaria	Upper middle income	Emerging and Developing Europe 	
+209	TUN	Tunisia	Upper middle income	Middle East comma North Africa comma and Pakistan 	
+212	GNQ	Equatorial Guinea	unknown	unknown	
+213	URY	Uruguay	High income colon nonOECD	Latin America and the Caribbean 	
+215	ETH	Ethiopia	unknown	unknown	
+217	LTU	Lithuania	unknown	unknown	
+218	BFA	Burkina Faso	unknown	unknown	
+219	CHE	Switzerland	unknown	unknown	
+220	CZE	Czech Republic	High income colon OECD	Advanced economies 	
+223	ZMB	Zambia	Lower middle income	Sub minus sign Saharan Africa 	
+225	BLR	Belarus	unknown	unknown	
+226	BRB	Barbados	High income colon nonOECD	Latin America and the Caribbean 	
+227	SDN	Sudan	unknown	unknown	
+228	IRL	Ireland	High income colon OECD	Advanced economies 	
+229	CAF	Central African Republic	unknown	unknown	
+230	NLD	Netherlands	unknown	unknown	
+231	ZWE	Zimbabwe	unknown	unknown	
+232	TUR	Turkey	unknown	unknown	
+233	DZA	Algeria	unknown	unknown	
+234	SWE	Sweden	High income colon OECD	Advanced economies 	
+236	YEM	Yemen	Lower middle income	Middle East comma North Africa comma and Pakistan 	
+237	UZB	Uzbekistan	unknown	unknown	
+239	PER	Peru	unknown	unknown	
+241	KHM	Cambodia	unknown	unknown	
+242	MNE	Montenegro	Upper middle income	Emerging and Developing Europe 	
+245	MCO	Monaco	unknown	unknown	
+247	PRT	Portugal	unknown	unknown	
+248	DOM	Dominican Republic	unknown	unknown	
+249	LKA	Sri Lanka	unknown	unknown	
+251	GIN	Guinea	Low income	Sub minus sign Saharan Africa 	
+254	LBN	Lebanon	unknown	unknown	
+256	TCD	Chad	Low income	Sub minus sign Saharan Africa 	
+257	GHA	Ghana	unknown	unknown	
+259	LSO	Lesotho	Lower middle income	Sub minus sign Saharan Africa 	
+261	LCA	St period Lucia	unknown	unknown	
+262	GUY	Guyana	unknown	unknown	
+264	MLT	Malta	High income colon nonOECD	Advanced economies 	
+265	PRY	Paraguay	Lower middle income	Latin America and the Caribbean 	
+266	SLV	El Salvador	Lower middle income	Latin America and the Caribbean 	
+267	VEN	Venezuela	unknown	unknown	
+268	EST	Estonia	unknown	unknown	
+269	MDA	Moldova	unknown	unknown	
+270	NIC	Nicaragua	Lower middle income	Latin America and the Caribbean 	
+271	KSV	Kosovo	unknown	unknown	
+272	CMR	Cameroon	Lower middle income	Sub minus sign Saharan Africa 	
+273	KEN	Kenya	unknown	unknown	
+274	LUX	Luxembourg	High income colon OECD	Advanced economies 	
+276	KOR	Korea	unknown	unknown	
+277	MDG	Madagascar	unknown	unknown	
+279	MAR	Morocco	Lower middle income	Middle East comma North Africa comma and Pakistan 	
+280	MKD	Macedonia comma FYR	Upper middle income	Emerging and Developing Europe 	
+281	PAK	Pakistan	Lower middle income	Middle East comma North Africa comma and Pakistan 	
+282	SEN	Senegal	unknown	unknown	
+283	DEU	Germany	unknown	unknown	
+284	ESP	Spain	unknown	unknown	
+285	SWZ	Swaziland	unknown	unknown	
+286	MWI	Malawi	Low income	Sub minus sign Saharan Africa 	
+287	KWT	Kuwait	High income colon nonOECD	Middle East comma North Africa comma and Pakistan 	
+288	HUN	Hungary	Upper middle income	Emerging and Developing Europe 	
+289	BGD	Bangladesh	unknown	unknown	
+290	BLZ	Belize	Upper middle income	Latin America and the Caribbean 	
+291	VNM	Vietnam	unknown	unknown	
+292	AGO	Angola	unknown	unknown	
+293	BHS	The Bahamas	unknown	unknown	
+294	TGO	Togo	unknown	unknown	
+295	MLI	Mali	unknown	unknown	
+296	MEX	Mexico	Upper middle income	Latin America and the Caribbean 	
+297	ITA	Italy	High income colon OECD	Advanced economies 	
+298	CYP	Cyprus	High income colon nonOECD	Advanced economies 	
+299	MOZ	Mozambique	Low income	Sub minus sign Saharan Africa 	
+300	FRA	France	unknown	unknown	
+301	LVA	Latvia	High income colon nonOECD	Advanced economies 	
+303	JOR	Jordan	Upper middle income	Middle East comma North Africa comma and Pakistan 	
+304	IDN	Indonesia	Lower middle income	Emerging and Developing Asia 	
+305	SVN	Slovenia	High income colon OECD	Advanced economies 	
+306	ARM	Armenia	Lower middle income	Commonwealth of Independent States 	
+307	BHR	Bahrain	unknown	unknown	
+308	FIN	Finland	High income colon OECD	Advanced economies 	
+309	KGZ	Kyrgyz Republic	unknown	unknown	
+310	GEO	Georgia	Lower middle income	Commonwealth of Independent States 	
+311	AUS	Australia	unknown	unknown	
+312	SAU	Saudi Arabia	High income colon nonOECD	Middle East comma North Africa comma and Pakistan 	
+313	NGA	Nigeria	unknown	unknown	
+314	UGA	Uganda	unknown	unknown	
+315	BTN	Bhutan	unknown	unknown	
+316	COM	Comoros	unknown	unknown	
+317	TJK	Tajikistan	Low income	Commonwealth of Independent States 	
+318	SYC	Seychelles	unknown	unknown	
+319	DMA	Dominica	unknown	unknown	
+320	MRT	Mauritania	Lower middle income	Middle East comma North Africa comma and Pakistan 	
+321	AFG	Afghanistan	unknown	unknown	
+322	RUS	Russian Federation	unknown	unknown	
+323	PRI	Puerto Rico	unknown	unknown	
+324	ZAF	South Africa	unknown	unknown	
+325	SGP	Singapore	unknown	unknown	
+326	ADO	Andorra	unknown	unknown	
+327	IRN	Iran comma Islamic Rep period 	unknown	unknown	
+328	GRD	Grenada	unknown	unknown	
+329	BEN	Benin	unknown	unknown	
+330	BEL	Belgium	High income colon OECD	Advanced economies 	
+331	FSM	Micronesia	unknown	unknown	
+332	CRI	Costa Rica	Upper middle income	Latin America and the Caribbean 	
+333	IMY	Isle of Man	unknown	unknown	
+334	GMB	Gambia comma The	Low income	Sub minus sign Saharan Africa 	
+335	KIR	Kiribati	unknown	unknown	
+336	BIH	Bosnia and Herzegovina	unknown	unknown	
+337	LBY	Libya	unknown	unknown	
+338	BRA	Brazil	unknown	unknown	
+339	DNK	Denmark	unknown	unknown	
+340	THA	Thailand	Upper middle income	Emerging and Developing Asia 	
+342	LAO	Lao P period D period R period 	unknown	unknown	
+343	NPL	Nepal	unknown	unknown	
+344	BRN	Brunei Darussalam	unknown	unknown	
+345	NOR	Norway	High income colon OECD	Advanced economies 	
+346	TLS	Timor minus sign Leste	unknown	unknown	
+347	HRV	Croatia	unknown	unknown	
+348	BDI	Burundi	Low income	Sub minus sign Saharan Africa 	
+349	SYR	Syria	unknown	unknown	
