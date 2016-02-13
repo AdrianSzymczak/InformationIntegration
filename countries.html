@@ -11,18 +11,17 @@
 	
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-	  google.charts.load("current", {packages:['motionchart']});
+	  google.charts.load("current", {packages:['table']});
       google.charts.setOnLoadCallback(drawVisualization);
 
 	  function drawVisualization() {
 	  
-	  		google.visualization.drawChart({
-			"containerId": "chart_div",
+		google.visualization.drawChart({
+			"containerId": "countries_div",
 			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-			"query":"SELECT 'name', 'Year', 'indicator-1', 'indicator-2', 'incomeGroup', 'region', 'indicator-3', 'indicator-4', 'indicator-5', 'indicator-6', 'indicator-7', 'indicator-8', 'indicator-9', 'indicator-10', 'indicator-11', 'indicator-12', 'indicator-13', 'indicator-14', 'indicator-15', 'indicator-16', 'indicator-17', 'indicator-18', 'indicator-19', 'indicator-20' FROM " +
-					"1Y1PzV_yd6eyMItLMZbN46hgssoBakckb9jCfu5Ft" + " WHERE 'Year' > 2000 " ,
-			"refreshInterval": 900,
-			"chartType": "MotionChart",
+			"query":"SELECT 'iso', 'name', 'incomeGroup', 'region' FROM " +
+					"12fp5zubxr-LnJZ9yFFqwYpk6Mh8V_3_RhB2GYAXK",
+			"chartType": "Table",
 			"options": {
 			width: 1300,
 			height: 700
@@ -43,6 +42,6 @@
 	  <a href="http://adrianszymczak.github.io/InformationIntegration/indicators.html" class="btn">Indicators</a>
 	  <a href="http://adrianszymczak.github.io/InformationIntegration/index.html" class="btn">Chart</a>
     </section>
-		<div id="chart_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+		<div id="countries_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>   
   </body>
 </html>
