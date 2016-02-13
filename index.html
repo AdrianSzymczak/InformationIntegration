@@ -10,17 +10,16 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">    
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-	  google.charts.load("current", {packages:['motionchart']});
+	  google.charts.load("current", {packages:['table']});
       google.charts.setOnLoadCallback(drawVisualization);
 	
 		function drawVisualization() {
 		google.visualization.drawChart({
-			"containerId": "chart_div",
+			"containerId": "indicators_div",
 			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-			"query":"SELECT 'Country', 'Year', 'Indicator1', 'Indicator4', 'Indicator11', 'Indicator-12', 'Indicator-13', 'Indicator-14', 'Indicator-15', 'Indicator-21', 'Indicator-26', 'Indicator-29', 'Indicator-32', 'Indicator-36', 'Indicator-42', 'Indicator-43', 'Indicator-47', 'Indicator-49', 'Indicator-50', 'Indicator-55', 'Indicator-60', 'Indicator-63', 'Indicator-67', 'Indicator-70', 'Indicator-73', 'Indicator-76', 'Indicator-83', 'Indicator-86', 'Indicator-87', 'Indicator-88', 'Indicator-90', 'Indicator-93', 'Indicator-96', 'Indicator-99', 'Indicator-103', 'Indicator-108', 'Indicator-109', 'Indicator-114', 'Indicator-123', 'Indicator-125', 'Indicator-126', 'Indicator-138', 'Indicator-140', 'Indicator-144', 'Indicator-152', 'Indicator-154', 'Indicator-155', 'Indicator-164', 'Indicator-171', 'Indicator-172', 'Indicator-174', 'Indicator-175', 'Indicator-177', 'Indicator-178', 'Indicator-180', 'Indicator-181', 'Indicator-182', 'Indicator-184', 'Indicator-185', 'Indicator-189', 'Indicator-191', 'Indicator-194', 'Indicator-196', 'Indicator-197', 'Indicator-200', 'Indicator-204', 'Indicator-205', 'Indicator-208', 'Indicator-210', 'Indicator-214', 'Indicator-220', 'Indicator-221', 'Indicator-226', 'Indicator-241', 'Indicator-243', 'Indicator-246', 'Indicator-248', 'Indicator-249', 'Indicator-252', 'Indicator-256', 'Indicator-257', 'Indicator-259', 'Indicator-261', 'Indicator-263', 'Indicator-264', 'Indicator-265', 'Indicator-267', 'Indicator-270', 'Indicator-271', 'Indicator-273', 'Indicator-276', 'Indicator-286', 'Indicator-291', 'Indicator-294', 'Indicator-295', 'Indicator-301', 'Indicator-302', 'Indicator-303', 'Indicator-310', 'Indicator-311', 'Indicator-312', 'Indicator-315', 'Indicator-316', 'Indicator-322', 'Indicator-324', 'Indicator-329', 'Indicator-331', 'Indicator-332', 'Indicator-334', 'Indicator-337', 'Indicator-341', 'Indicator-343', 'Indicator-349', 'Indicator-357', 'Indicator-365', 'Indicator-367', 'Indicator-373', 'Indicator-378', 'Indicator-379', 'Indicator-387', 'Indicator-389', 'Indicator-390', 'Indicator-393', 'Indicator-399', 'Indicator-401', 'Indicator-403', 'Indicator-409', 'Indicator-412', 'Indicator-413', 'Indicator-414', 'Indicator-415', 'Indicator-416', 'Indicator-417', 'Indicator-422', 'Indicator-425', 'Indicator-426', 'Indicator-430', 'Indicator-431', 'Indicator-437', 'Indicator-438', 'Indicator-442', 'Indicator-443', 'Indicator-447' FROM " +
-					"1R3YDmCdNOM5G5RgyIwaA6-09Jfwdw4QO0YdfBKmH",
-			"refreshInterval": 900,
-			"chartType": "MotionChart",
+			"query":"SELECT 'id', 'code', 'notes', 'description', 'units', 'scale', 'source', 'countryNotes' FROM " +
+					"1l-4ynsIlbDN4fMYBJWGDL0FXV3Nn-4SbTm0XQtKy",
+			"chartType": "Table",
 			"options": {
 			width: 1300,
 			height: 700
@@ -37,6 +36,7 @@
       <a href="https://github.com/AdrianSzymczak/InformationIntegration/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/AdrianSzymczak/InformationIntegration/tarball/master" class="btn">Download .tar.gz</a>
     </section>
-	<div id="chart_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+	<div id="countries_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+	<div id="indicators_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
   </body>
 </html>
