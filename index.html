@@ -12,9 +12,21 @@
     <script type="text/javascript">
 	  google.charts.load("current", {packages:['table']});
       google.charts.setOnLoadCallback(drawVisualization);
-	
-		function drawVisualization() {
+
+	  function drawVisualization() {
 		google.visualization.drawChart({
+			"containerId": "countries_div",
+			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+			"query":"SELECT 'id', 'iso', 'name', 'incomeGroup', 'region' FROM " +
+					"12fp5zubxr-LnJZ9yFFqwYpk6Mh8V_3_RhB2GYAXK",
+			"chartType": "Table",
+			"options": {
+			width: 1300,
+			height: 700
+			}
+		});
+		
+				google.visualization.drawChart({
 			"containerId": "indicators_div",
 			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
 			"query":"SELECT 'id', 'code', 'notes', 'description', 'units', 'scale', 'source', 'countryNotes' FROM " +
@@ -25,6 +37,7 @@
 			height: 700
 			}
 		});
+		
 		}
     </script>
   </head>
@@ -36,7 +49,9 @@
       <a href="https://github.com/AdrianSzymczak/InformationIntegration/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/AdrianSzymczak/InformationIntegration/tarball/master" class="btn">Download .tar.gz</a>
     </section>
+	<h3 class="project-name">Countries</h3>
 	<div id="countries_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+	<h3 class="project-name">Example 500 Indicators</h3>
 	<div id="indicators_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
   </body>
 </html>
