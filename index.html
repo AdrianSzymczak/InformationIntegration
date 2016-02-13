@@ -11,9 +11,24 @@
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 	  google.charts.load("current", {packages:['table']});
+	  google.charts.load("current", {packages:['motionchart']});
       google.charts.setOnLoadCallback(drawVisualization);
 
 	  function drawVisualization() {
+	  
+	  		google.visualization.drawChart({
+			"containerId": "chart_div",
+			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+			"query":"SELECT 'name', 'Year', 'indicator-1', 'indicator-2', 'incomeGroup', 'region', 'indicator-3', 'indicator-4', 'indicator-5', 'indicator-6', 'indicator-7', 'indicator-8', 'indicator-9', 'indicator-10', 'indicator-11', 'indicator-12', 'indicator-13', 'indicator-14', 'indicator-15', 'indicator-16', 'indicator-17', 'indicator-18', 'indicator-19', 'indicator-20' FROM " +
+					"1Y1PzV_yd6eyMItLMZbN46hgssoBakckb9jCfu5Ft" + " WHERE 'Year' > 2000 " ,
+			"refreshInterval": 900,
+			"chartType": "MotionChart",
+			"options": {
+			width: 1300,
+			height: 700
+			}
+		});
+		
 		google.visualization.drawChart({
 			"containerId": "countries_div",
 			"dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
@@ -49,10 +64,11 @@
       <a href="https://github.com/AdrianSzymczak/InformationIntegration/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/AdrianSzymczak/InformationIntegration/tarball/master" class="btn">Download .tar.gz</a>
     </section>
-		<h3 class="project-name" style="margin: 0 auto;">Chart</h3>
-	<h3 class="project-name" style="margin: 0 auto;">Countries</h3>
-	<div id="countries_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
-	<h3 class="project-name" style="margin: 0 auto;">Indicators</h3>
-	<div id="indicators_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+		<h3 style="text-align: center; margin: 0 auto;">Chart</h3>
+		<div id="chart_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+		<h3 style="text-align: center; margin: 0 auto;">Countries</h3>
+		<div id="countries_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
+		<h3 style="text-align: center; margin: 0 auto;">>Indicators</h3>
+		<div id="indicators_div" style="margin: 0 auto; width: 1300px; height: 700px;"></div>  
   </body>
 </html>
